@@ -1,0 +1,19 @@
+{
+  "name": "Sebastian",
+  "description": "",
+  "keywords": ["ruby", "padrino", ""],
+  "scripts": {
+    "postdeploy": "bundle exec rake ar:create ar:migrate"
+  },
+  "env": {
+    "BUNDLE_WITHOUT": {
+      "description": "bundle install --without <these>",
+      "value": "test:development"
+    }
+  },
+  "addons": [
+    "newrelic:stark",
+    "rollbar",
+    "papertrail"
+  ]
+}
