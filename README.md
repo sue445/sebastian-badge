@@ -15,4 +15,5 @@ vi config/database.yml
 heroku addons:add papertrail
 heroku addons:add rollbar
 heroku addons:add newrelic:stark
+heroku config:add ROLLBAR_ACCESS_TOKEN=XXXXXXXXXXXXXXXX
 ```
