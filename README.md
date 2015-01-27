@@ -10,3 +10,9 @@ cp config/database.yml{.example,}
 vi config/database.yml
 ```
 
+## Setup Heroku
+```bash
+heroku addons:add papertrail
+heroku addons:add rollbar
+heroku addons:add newrelic:stark
+```
