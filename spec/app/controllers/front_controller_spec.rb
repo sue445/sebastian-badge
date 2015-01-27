@@ -1,4 +1,4 @@
-require 'spec_helper'
+require "spec_helper"
 
 RSpec.describe "/front" do
   pending "add some examples to #{__FILE__}" do

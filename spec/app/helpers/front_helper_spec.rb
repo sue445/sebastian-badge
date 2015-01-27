@@ -1,8 +1,8 @@
-require 'spec_helper'
+require "spec_helper"
 
 RSpec.describe "Sebastian::App::FrontHelper" do
   pending "add some examples to (or delete) #{__FILE__}" do
-    let(:helpers){ Class.new }
+    let(:helpers) { Class.new }
     before { helpers.extend Sebastian::App::FrontHelper }
     subject { helpers }
 

@@ -1,5 +1,4 @@
 Sebastian::App.controllers :front do
-
   # get :index, :map => '/foo/bar' do
   #   session[:foo] = 'bar'
   #   render 'index'
@@ -19,8 +18,7 @@ Sebastian::App.controllers :front do
   #   'Hello world!'
   # end
 
-  get :index, map: '/' do
+  get :index, map: "/" do
     render :index
   end
-
 end

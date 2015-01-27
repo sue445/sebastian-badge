@@ -1,6 +1,6 @@
 desc "annotate models"
 task :annotate => :environment do
-  require 'annotate/annotate_models'
+  require "annotate/annotate_models"
 
   AnnotateModels.do_annotations(
     model_dir:         "#{__dir__}/../../models/",
@@ -8,6 +8,6 @@ task :annotate => :environment do
     exclude_factories: true,
     exclude_tests:     true,
     show_indexes:      true,
-    format_markdown:   false
+    format_markdown:   false,
   )
 end
