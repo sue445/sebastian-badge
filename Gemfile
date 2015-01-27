@@ -39,7 +39,7 @@ group :development do
 end
 
 group :test do
-
+  gem 'rspec-power_assert'
 end
 
 group :production do
