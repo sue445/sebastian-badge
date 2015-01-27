@@ -37,6 +37,7 @@ gem 'padrino', '0.12.4'
 
 
 group :development do
+  gem 'annotate'
   gem 'sqlite3', group: :test
 end
 
