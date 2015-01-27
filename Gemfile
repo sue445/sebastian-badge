@@ -17,7 +17,6 @@ gem 'rake'
 gem 'sass'
 gem 'slim'
 gem 'activerecord', '>= 3.1', :require => 'active_record'
-gem 'sqlite3'
 
 # Test requirements
 gem 'rspec', :group => 'test'
@@ -33,3 +32,16 @@ gem 'padrino', '0.12.4'
 # %w(core support gen helpers cache mailer admin).each do |g|
 #   gem 'padrino-' + g, '0.12.4'
 # end
+
+
+group :development do
+  gem 'sqlite3', group: :test
+end
+
+group :test do
+
+end
+
+group :production do
+  gem 'pg', group: :test
+end
