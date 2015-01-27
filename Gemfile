@@ -39,6 +39,7 @@ gem 'sinatra', github: 'sinatra'
 
 group :development do
   gem 'annotate'
+  gem 'foreman'
   gem 'sqlite3', group: :test
 end
 
@@ -49,4 +50,5 @@ end
 
 group :production do
   gem 'pg', group: :test
+  gem 'puma', group: :development
 end
