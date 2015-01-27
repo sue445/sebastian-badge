@@ -1,3 +1,12 @@
+GIT
+  remote: git://github.com/sinatra/sinatra.git
+  revision: 27d1716c7388db9f3c07d07c8b0c3c285d5caf42
+  specs:
+    sinatra (1.4.5)
+      rack (~> 1.4)
+      rack-protection (~> 1.4)
+      tilt (>= 1.3, < 3)
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -107,10 +116,6 @@ GEM
       multi_json (~> 1.0)
       simplecov-html (~> 0.8.0)
     simplecov-html (0.8.0)
-    sinatra (1.4.5)
-      rack (~> 1.4)
-      rack-protection (~> 1.4)
-      tilt (~> 1.3, >= 1.3.4)
     slim (3.0.1)
       temple (~> 0.7.3)
       tilt (>= 1.3.3, < 2.1)
@@ -345,5 +350,6 @@ DEPENDENCIES
   rspec
   rspec-power_assert
   sass
+  sinatra!
   slim
   sqlite3
