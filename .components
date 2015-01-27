@@ -6,4 +6,4 @@
 :renderer: slim
 :stylesheet: sass
 :namespace: Sebastian
-:migration_format: number
+:migration_format: timestamp
