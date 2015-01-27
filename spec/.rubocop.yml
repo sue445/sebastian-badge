@@ -1,0 +1,13 @@
+inherit_from:
+  - ../.rubocop.yml
+
+Style/Blocks:
+  Enabled: false
+Style/MultilineBlockChain:
+  Enabled: false
+
+Style/RescueModifier:
+  Enabled: false
+
+Style/Semicolon:
+  AllowAsExpressionSeparator: true
