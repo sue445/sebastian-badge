@@ -47,7 +47,9 @@ end
 
 group :test do
   gem "coveralls", require: false
+  gem "rspec-its"
   gem "rspec-power_assert"
+  gem "webmock"
 end
 
 group :production do
