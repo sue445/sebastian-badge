@@ -40,7 +40,7 @@ Padrino::Logger::Config[:test][:log_level] = :info
 # Add your before (RE)load hooks here
 #
 Padrino.before_load do
-  Time.zone = 'UTC'
+  Time.zone = "UTC"
 end
 
 ##

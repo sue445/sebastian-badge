@@ -1,6 +1,6 @@
 RSpec.describe Plugin do
   describe "#get_update_center_plugins" do
-    subject{ Plugin.get_update_center_plugins }
+    subject { Plugin.get_update_center_plugins }
 
     include_context :with_update_center_stub
 
@@ -10,7 +10,7 @@ RSpec.describe Plugin do
   end
 
   describe "#build_from_update_center" do
-    subject{ Plugin.build_from_update_center(args) }
+    subject { Plugin.build_from_update_center(args) }
 
     let(:args) {
       {
@@ -20,7 +20,7 @@ RSpec.describe Plugin do
           {
             "developerId" => "sue445",
             "email" => "sue445@sue445.net",
-            "name" => "sue445"
+            "name" => "sue445",
           },
         ],
         "excerpt" => "This Plugin will notify the ChatWork any message. ",
@@ -40,20 +40,20 @@ RSpec.describe Plugin do
       }
     }
 
-    its(:name)       { should eq args["name"] }
-    its(:title)      { should eq args["title"] }
-    its(:version)    { should eq args["version"] }
-    its(:wiki_url)   { should eq args["wiki"] }
-    its(:released_at){ should eq to_time(args["releaseTimestamp"]) }
+    its(:name)        { should eq args["name"] }
+    its(:title)       { should eq args["title"] }
+    its(:version)     { should eq args["version"] }
+    its(:wiki_url)    { should eq args["wiki"] }
+    its(:released_at) { should eq to_time(args["releaseTimestamp"]) }
   end
 
   describe "#import_from_update_center" do
-    subject{ Plugin.import_from_update_center }
+    subject { Plugin.import_from_update_center }
 
     include_context :with_update_center_stub
 
     context "When no data" do
-      it { expect{ subject }.to change{ Plugin.count }.by stub_plugin_count }
+      it { expect { subject }.to change { Plugin.count }.by stub_plugin_count }
     end
 
     context "When already exists plugins" do
@@ -61,7 +61,7 @@ RSpec.describe Plugin do
         Plugin.import_from_update_center
       end
 
-      it { expect{ subject }.to change{ Plugin.count }.by 0 }
+      it { expect { subject }.to change { Plugin.count }.by 0 }
     end
   end
 end
