@@ -41,7 +41,7 @@ class Plugin < ActiveRecord::Base
     )
   end
 
-  # download update-center.json and bulk insert to DB
+  # download update-center.json and bulk import to DB
   def self.import_from_update_center
     plugins = get_update_center_plugins.each_with_object([]) do |(_k, v), array|
       array << build_from_update_center(v)
