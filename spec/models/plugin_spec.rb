@@ -1,6 +1,6 @@
 RSpec.describe Plugin do
-  describe "#get_update_center_plugins" do
-    subject { Plugin.get_update_center_plugins }
+  describe "#fetch_update_center_plugins" do
+    subject { Plugin.fetch_update_center_plugins }
 
     include_context :with_update_center_stub
 

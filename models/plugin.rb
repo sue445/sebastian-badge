@@ -23,7 +23,7 @@ class Plugin < ActiveRecord::Base
 
   # get plugins in update-center.json
   # @return [Hash]
-  def self.get_update_center_plugins
+  def self.fetch_update_center_plugins
     jsonp = open(UPDATE_CENTER_URL).read
     json = jsonp.gsub(/updateCenter.post\((.+)\);/m) { Regexp.last_match[1] }
     JSON.parse(json)["plugins"]
@@ -43,7 +43,7 @@ class Plugin < ActiveRecord::Base
 
   # download update-center.json and bulk import to DB
   def self.import_from_update_center
-    plugins = get_update_center_plugins.each_with_object([]) do |(_k, v), array|
+    plugins = fetch_update_center_plugins.each_with_object([]) do |(_k, v), array|
       array << build_from_update_center(v)
     end
 
