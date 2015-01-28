@@ -35,6 +35,7 @@ Bundler.require(:default, RACK_ENV)
 # Add your before (RE)load hooks here
 #
 Padrino.before_load do
+  Time.zone = 'UTC'
 end
 
 ##

@@ -125,3 +125,7 @@ end
 def fixture_dir
   spec_dir.join("support", "fixtures")
 end
+
+def to_time(str)
+  Time.zone.parse(str)
+end

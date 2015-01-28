@@ -28,4 +28,16 @@ class Plugin < ActiveRecord::Base
     json = jsonp.gsub(/updateCenter.post\((.+)\);/m){ $1 }
     JSON.parse(json)["plugins"]
   end
+
+  # @param args [Hash] value of plugins
+  # @return [Plugin]
+  def self.build_from_update_center(args)
+    Plugin.new(
+      name:        args["name"],
+      title:       args["title"],
+      version:     args["version"],
+      wiki_url:    args["wiki"],
+      released_at: Time.zone.parse(args["releaseTimestamp"]),
+    )
+  end
 end
