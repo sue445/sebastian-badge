@@ -40,4 +40,16 @@ class Plugin < ActiveRecord::Base
       released_at: Time.zone.parse(args["releaseTimestamp"]),
     )
   end
+
+  # download update-center.json and bulk insert to DB
+  def self.import_from_update_center
+    plugins = get_update_center_plugins.each_with_object([]) do |(_k, v), array|
+      array << build_from_update_center(v)
+    end
+
+    Plugin.transaction do
+      Plugin.delete_all
+      Plugin.import(plugins)
+    end
+  end
 end

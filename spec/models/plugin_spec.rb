@@ -4,7 +4,7 @@ RSpec.describe Plugin do
 
     include_context :with_update_center_stub
 
-    its(:count) { should eq 1053 }
+    its(:count) { should eq stub_plugin_count }
     it { should be_an_instance_of Hash  }
     it { should be_has_key "chatwork" }
   end
@@ -45,5 +45,23 @@ RSpec.describe Plugin do
     its(:version)    { should eq args["version"] }
     its(:wiki_url)   { should eq args["wiki"] }
     its(:released_at){ should eq to_time(args["releaseTimestamp"]) }
+  end
+
+  describe "#import_from_update_center" do
+    subject{ Plugin.import_from_update_center }
+
+    include_context :with_update_center_stub
+
+    context "When no data" do
+      it { expect{ subject }.to change{ Plugin.count }.by stub_plugin_count }
+    end
+
+    context "When already exists plugins" do
+      before do
+        Plugin.import_from_update_center
+      end
+
+      it { expect{ subject }.to change{ Plugin.count }.by 0 }
+    end
   end
 end

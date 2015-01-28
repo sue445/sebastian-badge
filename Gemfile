@@ -35,7 +35,8 @@ gem "padrino", "0.12.4"
 #   gem 'padrino-' + g, '0.12.4'
 # end
 
-gem 'rollbar', '~> 1.3.1'
+gem "activerecord-import"
+gem "rollbar", "~> 1.3.1"
 gem "sinatra", github: "sinatra"
 
 group :development do
@@ -47,6 +48,7 @@ end
 
 group :test do
   gem "coveralls", require: false
+  gem "database_rewinder"
   gem "rspec-its"
   gem "rspec-power_assert"
   gem "webmock"

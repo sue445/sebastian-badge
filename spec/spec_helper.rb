@@ -102,6 +102,16 @@ RSpec.configure do |config|
   config.include Rack::Test::Methods
 
   config.order = :random
+
+  config.before :suite do
+    DatabaseRewinder.clean_all
+    # or
+    # DatabaseRewinder.clean_with :any_arg_that_would_be_actually_ignored_anyway
+  end
+
+  config.after :each do
+    DatabaseRewinder.clean
+  end
 end
 
 # You can use this method to custom specify a Rack app

@@ -5,4 +5,6 @@ shared_context :with_update_center_stub do
       with(:headers => {'Accept'=>'*/*', 'Accept-Encoding'=>'gzip;q=1.0,deflate;q=0.6,identity;q=0.3', 'User-Agent'=>'Ruby'}).
       to_return(:status => 200, :body => fixture_json, :headers => {})
   end
+
+  let(:stub_plugin_count){ 1053 }
 end
