@@ -1,5 +1,5 @@
 Sebastian::App.controllers :plugins do
-  
+
   # get :index, :map => '/foo/bar' do
   #   session[:foo] = 'bar'
   #   render 'index'
@@ -18,13 +18,17 @@ Sebastian::App.controllers :plugins do
   # get '/example' do
   #   'Hello world!'
   # end
-  
+
   get :index do
 
   end
 
-  get :show do
+  get :show, map: "/plugins/:name", provides: [:html, :svg] do
+    render :show
+  end
 
+  before :show do
+    @plugin = Plugin.find_by(name: params[:name])
   end
 
 end

@@ -49,7 +49,10 @@ end
 group :test do
   gem "coveralls", require: false
   gem "database_rewinder"
+  gem "factory_girl"
+  gem "faker-precure"
   gem "rspec-its"
+  gem "rspec-padrino"
   gem "rspec-power_assert"
   gem "webmock"
 end
