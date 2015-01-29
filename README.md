@@ -8,6 +8,20 @@
 ```bash
 cp config/database.yml{.example,}
 vi config/database.yml
+
+bundle exec rake ar:create
+bundle exec rake ar:migrate
+
+bundle exec padrino start
+# or
+bundle exec foreman start
+```
+
+## Testing
+```bash
+RACK_ENV=test bundle exec rake ar:create
+RACK_ENV=test bundle exec rake ar:migrate
+bundle exec rspec
 ```
 
 ## Setup Heroku
