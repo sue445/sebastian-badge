@@ -1,3 +1,23 @@
-h1 = params[:name]
+h1 = @title
 
-= @plugin.wiki_url
+= link_to @plugin.wiki_url do
+  = image_tag badge_url(@plugin)
+
+form
+  .form-group
+    label for="badge_url"
+      | Badge URL
+    = text_field_tag :badge_url, class: "form-control click-select", readonly: true,
+                     value: badge_url(@plugin)
+
+  .form-group
+    label for="badge_markdown"
+      | Markdown
+    = text_field_tag :badge_markdown, class: "form-control click-select", readonly: true,
+                     value: "[![Plugin Version](#{badge_url(@plugin)})](#{@plugin.wiki_url})"
+
+  .form-group
+    label for="badge_html"
+      | HTML
+    = text_field_tag :badge_html, class: "form-control click-select", readonly: true,
+                     value: "<a href='#{@plugin.wiki_url}'><img src='#{badge_url(@plugin)}'/></a>"

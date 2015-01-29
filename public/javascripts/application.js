@@ -1,1 +1,5 @@
-// Put your application scripts here
+$(function () {
+  $(".click-select").click(function () {
+    $(this).select();
+  });
+});

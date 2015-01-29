@@ -6,6 +6,10 @@ module Sebastian
       # def simple_helper_method
       # ...
       # end
+
+      def badge_url(plugin)
+        absolute_url(:plugins, :show, name: plugin.name, format: :svg)
+      end
     end
 
     helpers PluginsHelper

@@ -1,5 +1,3 @@
-require "spec_helper"
-
 RSpec.describe "Sebastian::App::FrontHelper" do
   pending "add some examples to (or delete) #{__FILE__}" do
     let(:helpers) { Class.new }

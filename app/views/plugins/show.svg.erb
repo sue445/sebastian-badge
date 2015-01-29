@@ -1,0 +1,43 @@
+<%
+   subject_width = 90
+   version_left  = subject_width + 5
+   version_width = @plugin.version.length * 8
+   badge_width   = subject_width + version_width
+   badge_height  = 18
+%>
+
+<svg contentScriptType="text/ecmascript" width="<%= badge_width %>"
+     xmlns:xlink="http://www.w3.org/1999/xlink" zoomAndPan="magnify"
+     contentStyleType="text/css" height="18" preserveAspectRatio="xMidYMid meet"
+     xmlns="http://www.w3.org/2000/svg" version="1.0">
+
+  <linearGradient xmlns:xlink="http://www.w3.org/1999/xlink" x2="0" y2="100%"
+                  xlink:type="simple" xlink:actuate="onLoad" id="a"
+                  xlink:show="other">
+    <stop stop-opacity=".7" stop-color="#fff" offset="0"/>
+    <stop stop-opacity=".1" stop-color="#aaa" offset=".1"/>
+    <stop stop-opacity=".3" offset=".9"/>
+    <stop stop-opacity=".5" offset="1"/>
+  </linearGradient>
+
+  <rect rx="4" fill="#555" width="<%= badge_width %>" height="18" class="sWidth"/>
+  <rect rx="4" fill="#4c1" width="<%= version_width %>" x="<%= subject_width %>" height="<%= badge_height %>" class="vWidth tMove"/>
+  <rect fill="#4c1" x="<%= subject_width %>" width="13" height="<%= badge_height %>" class="tMove"/>
+  <rect rx="4" fill="url(#a)" width="<%= badge_width %>" height="<%= badge_height %>" class="sWidth"/>
+
+  <g font-size="11" font-family="DejaVu Sans,Verdana,Geneva,sans-serif"
+     fill="#fff">
+    <text x="6" fill="#010101" fill-opacity=".3" y="13">
+      plugin version
+    </text>
+    <text x="6" id="tText" y="12">
+      plugin version
+    </text>
+    <text fill="#010101" x="<%= version_left %>" fill-opacity=".3" y="13" class="tMove">
+      <%= @plugin.version %>
+    </text>
+    <text x="<%= version_left %>" id="vText" y="12" class="tMove">
+      <%= @plugin.version %>
+    </text>
+  </g>
+</svg>
