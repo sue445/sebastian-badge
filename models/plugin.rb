@@ -13,7 +13,8 @@
 #
 # Indexes
 #
-#  index_plugins_on_name  (name) UNIQUE
+#  index_plugins_on_name         (name) UNIQUE
+#  index_plugins_on_released_at  (released_at)
 #
 
 require "open-uri"

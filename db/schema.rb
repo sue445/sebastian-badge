@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150127160648) do
+ActiveRecord::Schema.define(version: 20150130135446) do
 
   create_table "plugins", force: :cascade do |t|
     t.string   "name"
@@ -24,5 +24,6 @@ ActiveRecord::Schema.define(version: 20150127160648) do
   end
 
   add_index "plugins", ["name"], name: "index_plugins_on_name", unique: true
+  add_index "plugins", ["released_at"], name: "index_plugins_on_released_at"
 
 end
