@@ -33,3 +33,5 @@ heroku addons:add rollbar
 heroku addons:add newrelic:stark
 heroku config:add ROLLBAR_ACCESS_TOKEN=XXXXXXXXXXXXXXXX
 ```
+
+[![Deploy](https://www.herokucdn.com/deploy/button.png)](https://heroku.com/deploy)
