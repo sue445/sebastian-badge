@@ -27,6 +27,17 @@ module Sebastian
     # set :cache, Padrino::Cache.new(:File, :dir => Padrino.root('tmp', app_name.to_s, 'cache')) # default choice
     #
 
+    # ref. https://devcenter.heroku.com/articles/memcachier
+    cache = Dalli::Client.new(
+      (ENV["MEMCACHIER_SERVERS"] || "127.0.0.1:11211").split(","),
+      username:             ENV["MEMCACHIER_USERNAME"],
+      password:             ENV["MEMCACHIER_PASSWORD"],
+      failover:             true,
+      socket_timeout:       1.5,
+      socket_failure_delay: 0.2,
+    )
+    set :cache, Padrino::Cache.new(:Memcached, backend: cache)
+
     ##
     # Application configuration options.
     #
@@ -51,6 +62,16 @@ module Sebastian
     #     disable :asset_stamp # no asset timestamping for dev
     #   end
     #
+    configure :development do
+      set :enabled_paging_cache, false
+    end
+    configure :test do
+      set :enabled_paging_cache, false
+    end
+    configure :production do
+      set :enabled_paging_cache, true
+    end
+
 
     ##
     # You can manage errors like:

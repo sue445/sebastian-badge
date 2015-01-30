@@ -31,6 +31,7 @@ bundle exec rspec
 heroku addons:add papertrail
 heroku addons:add rollbar
 heroku addons:add newrelic:stark
+heroku addons:add memcachier:dev
 heroku config:add ROLLBAR_ACCESS_TOKEN=XXXXXXXXXXXXXXXX
 ```
 
