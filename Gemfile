@@ -36,6 +36,7 @@ gem "padrino", "0.12.4"
 # end
 
 gem "activerecord-import"
+gem "dalli"
 gem "rollbar", "~> 1.3.1"
 gem "sinatra", github: "sinatra"
 

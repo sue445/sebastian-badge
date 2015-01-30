@@ -120,6 +120,11 @@ RSpec.configure do |config|
   config.after :each do
     DatabaseRewinder.clean
   end
+
+  config.after do
+    # clear all memcache
+    Sebastian::App.cache.flush
+  end
 end
 
 # You can use this method to custom specify a Rack app

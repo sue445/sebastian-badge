@@ -27,6 +27,17 @@ module Sebastian
     # set :cache, Padrino::Cache.new(:File, :dir => Padrino.root('tmp', app_name.to_s, 'cache')) # default choice
     #
 
+    # ref. https://devcenter.heroku.com/articles/memcachier
+    cache = Dalli::Client.new(
+      (ENV["MEMCACHIER_SERVERS"] || "").split(","),
+      username:             ENV["MEMCACHIER_USERNAME"],
+      password:             ENV["MEMCACHIER_PASSWORD"],
+      failover:             true,
+      socket_timeout:       1.5,
+      socket_failure_delay: 0.2,
+    )
+    set :cache, Padrino::Cache.new(:Memcached, backend: cache)
+
     ##
     # Application configuration options.
     #
