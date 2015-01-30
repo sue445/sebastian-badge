@@ -54,14 +54,29 @@ RSpec.describe Plugin do
 
     context "When no data" do
       it { expect { subject }.to change { Plugin.count }.by stub_plugin_count }
+      its(:count) { should eq stub_plugin_count }
     end
 
     context "When already exists plugins" do
       before do
         Plugin.import_from_update_center
+
+        second_fetched_plugins = Plugin.all
+
+        @updated_plugin = second_fetched_plugins.first
+        @updated_plugin.released_at = 1.month.from_now
+        second_fetched_plugins[0] = @updated_plugin
+
+        @new_plugin = build(:plugin, released_at: 1.month.from_now)
+
+        second_fetched_plugins << @new_plugin
+
+        allow(Plugin).to receive(:fetched_plugins) { second_fetched_plugins }
       end
 
-      it { expect { subject }.to change { Plugin.count }.by 0 }
+      it { expect { subject }.to change { Plugin.count }.by 1 }
+      it { should contain_exactly(@updated_plugin, @new_plugin) }
+      its(:count) { should eq 2 }
     end
   end
 end
