@@ -123,7 +123,7 @@ RSpec.configure do |config|
 
   config.after do
     # clear all memcache
-    Sebastian::App.cache.flush
+    Sebastian::App.cache.clear
   end
 end
 

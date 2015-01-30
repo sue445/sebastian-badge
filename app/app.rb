@@ -29,7 +29,7 @@ module Sebastian
 
     # ref. https://devcenter.heroku.com/articles/memcachier
     cache = Dalli::Client.new(
-      (ENV["MEMCACHIER_SERVERS"] || "").split(","),
+      (ENV["MEMCACHIER_SERVERS"] || "127.0.0.1:11211").split(","),
       username:             ENV["MEMCACHIER_USERNAME"],
       password:             ENV["MEMCACHIER_PASSWORD"],
       failover:             true,
@@ -62,6 +62,16 @@ module Sebastian
     #     disable :asset_stamp # no asset timestamping for dev
     #   end
     #
+    configure :development do
+      set :enabled_paging_cache, false
+    end
+    configure :test do
+      set :enabled_paging_cache, false
+    end
+    configure :production do
+      set :enabled_paging_cache, true
+    end
+
 
     ##
     # You can manage errors like:

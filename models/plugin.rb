@@ -22,6 +22,10 @@ require "open-uri"
 class Plugin < ActiveRecord::Base
   UPDATE_CENTER_URL = "https://updates.jenkins-ci.org/current/update-center.json"
 
+  include Padrino::Routing::InstanceMethods
+
+  after_save :clear_cache
+
   # get plugins in update-center.json
   # @return [Hash]
   def self.fetch_update_center_plugins
@@ -78,4 +82,15 @@ class Plugin < ActiveRecord::Base
     end
   end
   private_class_method :fetched_plugins
+
+  private
+
+  def clear_cache
+    %W(
+      /plugins/#{name}
+      /plugins/#{name}.svg
+    ).each do |key|
+      Sebastian::App.cache.delete(key)
+    end
+  end
 end

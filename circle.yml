@@ -3,6 +3,9 @@ machine:
   ruby:
     version: 2.2.0
 
+  services:
+    - memcached
+
   # Add some environment variables
   environment:
     COVERAGE: true
