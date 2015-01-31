@@ -22,7 +22,7 @@ require "open-uri"
 class Plugin < ActiveRecord::Base
   UPDATE_CENTER_URL = "https://updates.jenkins-ci.org/current/update-center.json"
 
-  include Padrino::Routing::InstanceMethods
+  paginates_per 50
 
   after_save     :clear_cache
   before_destroy :clear_cache

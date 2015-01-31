@@ -37,6 +37,7 @@ gem "padrino", "0.12.4"
 
 gem "activerecord-import"
 gem "dalli"
+gem "kaminari", require: "kaminari/sinatra"
 gem "rollbar", "~> 1.3.1"
 gem "sinatra", github: "sinatra"
 

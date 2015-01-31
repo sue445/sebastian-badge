@@ -22,6 +22,9 @@ Sebastian::App.controllers :plugins do
   enable :caching
 
   get :index do
+    # TODO: WIP
+    @plugins = Plugin.page(params[:page])
+    render :index
   end
 
   get :show, map: "/plugins/:name", provides: [:html, :svg], cache: settings.enabled_paging_cache? do

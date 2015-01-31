@@ -10,6 +10,12 @@ module Sebastian
       def badge_url(plugin)
         absolute_url(:plugins, :show, name: plugin.name, format: :svg)
       end
+
+      def badge_tag(plugin)
+        link_to(plugin.wiki_url) do
+          image_tag(badge_url(plugin))
+        end
+      end
     end
 
     helpers PluginsHelper
