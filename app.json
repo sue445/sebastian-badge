@@ -15,6 +15,7 @@
     "newrelic:stark",
     "rollbar",
     "memcachier:dev",
+    "scheduler",
     "papertrail"
   ]
 }
