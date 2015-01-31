@@ -24,7 +24,8 @@ class Plugin < ActiveRecord::Base
 
   include Padrino::Routing::InstanceMethods
 
-  after_save :clear_cache
+  after_save     :clear_cache
+  before_destroy :clear_cache
 
   # get plugins in update-center.json
   # @return [Hash]
