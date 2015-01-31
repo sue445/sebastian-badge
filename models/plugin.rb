@@ -52,31 +52,40 @@ class Plugin < ActiveRecord::Base
     newest_plugin = Plugin.order(released_at: :desc).take
 
     if newest_plugin
-      newest_released_at = newest_plugin.released_at
-      updated_plugins = fetched_plugins.select { |plugin| plugin.released_at > newest_released_at }
-
-      Plugin.transaction do
-        updated_plugins.each do |updated_plugin|
-          plugin = Plugin.find_or_initialize_by(name: updated_plugin.name)
-          plugin.update_attributes!(
-            title:       updated_plugin.title,
-            version:     updated_plugin.version,
-            wiki_url:    updated_plugin.wiki_url,
-            released_at: updated_plugin.released_at,
-          )
-        end
-      end
-
-      updated_plugins
+      update_plugins(fetched_plugins, newest_plugin.released_at)
     else
-      # no plugins
-      Plugin.transaction do
-        Plugin.import(fetched_plugins)
-      end
-      fetched_plugins
+      bulk_insert_plugins(fetched_plugins)
     end
   end
 
+  def self.update_plugins(plugins, newest_released_at)
+    updated_plugins = plugins.select { |plugin| plugin.released_at > newest_released_at }
+
+    Plugin.transaction do
+      updated_plugins.each do |updated_plugin|
+        plugin = Plugin.find_or_initialize_by(name: updated_plugin.name)
+        plugin.update_attributes!(
+          title:       updated_plugin.title,
+          version:     updated_plugin.version,
+          wiki_url:    updated_plugin.wiki_url,
+          released_at: updated_plugin.released_at,
+        )
+      end
+    end
+
+    updated_plugins
+  end
+  private_class_method :update_plugins
+
+  def self.bulk_insert_plugins(plugins)
+    Plugin.transaction do
+      Plugin.import(plugins)
+    end
+    plugins
+  end
+  private_class_method :bulk_insert_plugins
+
+  # @return [Array<Plugin>]
   def self.fetched_plugins
     fetch_update_center_plugins.each_with_object([]) do |(_k, v), array|
       array << build_from_update_center(v)
