@@ -23,6 +23,7 @@ bundle exec foreman start
 ```bash
 RACK_ENV=test bundle exec rake ar:create
 RACK_ENV=test bundle exec rake ar:migrate
+RACK_ENV=test bundle exec rake groonga:setup
 bundle exec rspec
 ```
 

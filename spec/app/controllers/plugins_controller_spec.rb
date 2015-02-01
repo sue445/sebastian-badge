@@ -9,13 +9,23 @@ RSpec.describe "/plugins" do
     it { expect(assigns(:plugin)).to eq plugin }
   end
 
-  pending "add some examples to #{__FILE__}" do
+  describe "GET /plugins" do
     before do
-      get "/plugins"
+      get "/plugins", params
     end
 
-    it "returns hello world" do
-      expect(last_response.body).to eq "Hello World"
+    context "without query" do
+      let(:params) { {} }
+
+      it { expect(last_response).to be_ok }
+      it { expect(assigns(:plugins)).to eq [] }
+    end
+
+    context "with query" do
+      let(:params) { { query: "test" } }
+
+      it { expect(last_response).to be_ok }
+      it { expect(assigns(:plugins)).to eq [] }
     end
   end
 end
