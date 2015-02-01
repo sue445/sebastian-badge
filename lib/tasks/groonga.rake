@@ -1,4 +1,7 @@
 namespace :groonga do
+  require "groonga"
+  require "fileutils"
+
   desc "Setup groonga"
   task :setup => :environment do
     Padrino.logger.info "Setup Groonga"
