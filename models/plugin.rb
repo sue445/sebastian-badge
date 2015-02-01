@@ -27,6 +27,8 @@ class Plugin < ActiveRecord::Base
   after_save     :clear_cache
   before_destroy :clear_cache
 
+  include Concerns::Plugin::Groonga
+
   # get plugins in update-center.json
   # @return [Hash]
   def self.fetch_update_center_plugins
