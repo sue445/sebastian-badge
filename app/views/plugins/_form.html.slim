@@ -1,0 +1,6 @@
+form.form-inline role="search" action=url_for(:plugins, :index)
+  .form-group
+    = text_field_tag :query, class: "form-control", placeholder: "Search", value: params[:query]
+  button.btn.btn-primary type="submit"
+    .glyphicon.glyphicon-search
+    | Search

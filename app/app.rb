@@ -4,6 +4,8 @@ module Sebastian
     use ConnectionPoolManagement
     register Padrino::Mailer
     register Padrino::Helpers
+    register Kaminari::Helpers::SinatraHelpers
+    register GroongaInitializer
 
     enable :sessions
 
@@ -71,7 +73,6 @@ module Sebastian
     configure :production do
       set :enabled_paging_cache, true
     end
-
 
     ##
     # You can manage errors like:

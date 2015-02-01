@@ -6,6 +6,7 @@
     "postdeploy": "bundle exec rake ar:create ar:migrate"
   },
   "env": {
+    "BUILDPACK_URL": "https://codon-buildpacks.s3.amazonaws.com/buildpacks/groonga/rroonga.tgz",
     "BUNDLE_WITHOUT": {
       "description": "bundle install --without <these>",
       "value": "test:development"
