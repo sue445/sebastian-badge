@@ -19,6 +19,7 @@ Sebastian::App.controllers :front do
   # end
 
   get :index, map: "/" do
+    @latest_released_plugins = Plugin.order(released_at: :desc).limit(20)
     render :index
   end
 end
