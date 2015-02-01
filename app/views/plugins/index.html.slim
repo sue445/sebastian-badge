@@ -1,5 +1,7 @@
 = partial "plugins/form"
 
+= paginate @plugins
+
 table.table.table-striped.table-hover.table-condensed
   thead
     tr
@@ -14,3 +16,5 @@ table.table.table-striped.table-hover.table-condensed
             = plugin.title
         td = badge_tag(plugin)
         td = plugin.released_at
+
+= paginate @plugins
