@@ -6,5 +6,5 @@ shared_context :with_update_center_stub do
       to_return(status: 200, body: fixture_json, headers: {})
   end
 
-  let(:stub_plugin_count) { 1053 }
+  let(:stub_plugin_count) { 150 }
 end
