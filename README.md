@@ -23,7 +23,6 @@ bundle exec foreman start
 ```bash
 RACK_ENV=test bundle exec rake ar:create
 RACK_ENV=test bundle exec rake ar:migrate
-RACK_ENV=test bundle exec rake groonga:setup
 bundle exec rspec
 ```
 
@@ -35,7 +34,6 @@ heroku addons:add newrelic:stark
 heroku addons:add memcachier:dev
 heroku addons:add scheduler
 heroku config:add ROLLBAR_ACCESS_TOKEN=XXXXXXXXXXXXXXXX
-heroku config:set BUILD_PACK=https://codon-buildpacks.s3.amazonaws.com/buildpacks/groonga/rroonga.tgz
 ```
 
 [![Deploy](https://www.herokucdn.com/deploy/button.png)](https://heroku.com/deploy)
