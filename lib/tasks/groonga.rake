@@ -1,6 +1,8 @@
 namespace :groonga do
   desc "Setup groonga"
   task :setup => :environment do
+    Padrino.logger.info "Setup Groonga"
+
     Groonga::Schema.define do |schema|
       schema.create_table("Plugins",
                           type: :hash,
