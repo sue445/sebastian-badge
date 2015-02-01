@@ -18,8 +18,6 @@
 #
 
 class Plugin < ActiveRecord::Base
-  paginates_per 50
-
   after_save     :clear_cache
   before_destroy :clear_cache
 

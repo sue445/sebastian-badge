@@ -10,19 +10,6 @@ GIT
 GEM
   remote: https://rubygems.org/
   specs:
-    actionpack (4.2.0)
-      actionview (= 4.2.0)
-      activesupport (= 4.2.0)
-      rack (~> 1.6.0)
-      rack-test (~> 0.6.2)
-      rails-dom-testing (~> 1.0, >= 1.0.5)
-      rails-html-sanitizer (~> 1.0, >= 1.0.1)
-    actionview (4.2.0)
-      activesupport (= 4.2.0)
-      builder (~> 3.1)
-      erubis (~> 2.7.0)
-      rails-dom-testing (~> 1.0, >= 1.0.5)
-      rails-html-sanitizer (~> 1.0, >= 1.0.1)
     activemodel (4.2.0)
       activesupport (= 4.2.0)
       builder (~> 3.1)
@@ -62,7 +49,6 @@ GEM
     diff-lcs (1.2.5)
     docile (1.1.5)
     dotenv (1.0.2)
-    erubis (2.7.0)
     factory_girl (4.5.0)
       activesupport (>= 3.0.0)
     faker-precure (0.0.3)
@@ -83,22 +69,14 @@ GEM
     i18n (0.7.0)
     io-like (0.3.0)
     json (1.8.2)
-    kaminari (0.16.2)
-      actionpack (>= 3.0.0)
-      activesupport (>= 3.0.0)
-    loofah (2.0.1)
-      nokogiri (>= 1.5.9)
     mail (2.5.4)
       mime-types (~> 1.16)
       treetop (~> 1.4.8)
     mime-types (1.25.1)
-    mini_portile (0.6.2)
     minitest (5.5.1)
     moneta (0.7.20)
     multi_json (1.10.1)
     netrc (0.10.2)
-    nokogiri (1.6.6.2)
-      mini_portile (~> 0.6.0)
     padrino (0.12.4)
       padrino-admin (= 0.12.4)
       padrino-cache (= 0.12.4)
@@ -147,14 +125,6 @@ GEM
       rack
     rack-test (0.6.3)
       rack (>= 1.0)
-    rails-deprecated_sanitizer (1.0.3)
-      activesupport (>= 4.2.0.alpha)
-    rails-dom-testing (1.0.5)
-      activesupport (>= 4.2.0.beta, < 5.0)
-      nokogiri (~> 1.6.0)
-      rails-deprecated_sanitizer (>= 1.0.1)
-    rails-html-sanitizer (1.0.1)
-      loofah (~> 2.0)
     rainbow (2.0.0)
     rake (10.4.2)
     rest-client (1.7.2)
@@ -445,7 +415,6 @@ DEPENDENCIES
   factory_girl
   faker-precure
   foreman
-  kaminari
   padrino (= 0.12.4)
   pg
   puma

@@ -27,7 +27,8 @@ Sebastian::App.controllers :plugins do
     else
       conditions = Plugin.all
     end
-    @plugins = conditions.page(params[:page])
+    # TODO: WIP
+    @plugins = conditions.limit(50)
 
     render :index
   end
