@@ -20,7 +20,6 @@ database:
     # replace CircleCI's generated database.yml
     - cp spec/circle_ci/database.yml.postgresql config/database.yml
     - bundle exec rake ar:migrate:reset
-    - bundle exec rake groonga:setup
 
 ## Customize test commands
 test:

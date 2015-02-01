@@ -22,12 +22,7 @@ Sebastian::App.controllers :plugins do
   enable :caching
 
   get :index do
-    if params[:query].present?
-      conditions = search(params[:query])
-    else
-      conditions = Plugin.all
-    end
-    @plugins = conditions.page(params[:page])
+    @plugins = Plugin.page(params[:page])
 
     render :index
   end
@@ -43,18 +38,5 @@ Sebastian::App.controllers :plugins do
   before :show do
     @plugin = Plugin.find_by(name: params[:name])
     @title = @plugin.title
-  end
-
-  helpers do
-    def search(query)
-      groonga_plugins = Groonga["Plugins"]
-      matched_groonga_plugins = groonga_plugins.select do |record|
-        record.match(query) do |match_target|
-          match_target.title | match_target.name
-        end
-      end
-      plugin_ids = matched_groonga_plugins.map(&:_key)
-      Plugin.where(id: plugin_ids)
-    end
   end
 end

@@ -5,7 +5,6 @@ module Sebastian
     register Padrino::Mailer
     register Padrino::Helpers
     register Kaminari::Helpers::SinatraHelpers
-    register GroongaInitializer
 
     enable :sessions
 
