@@ -2,19 +2,6 @@
 
 = paginate @plugins
 
-table.table.table-striped.table-hover.table-condensed
-  thead
-    tr
-      th title
-      th version
-      th released_at
-  tbody
-    - @plugins.each do |plugin|
-      tr
-        td
-          = link_to url(:plugins, :show, name: plugin.name)
-            = plugin.title
-        td = badge_tag(plugin)
-        td = plugin.released_at
+= partial "plugins/list", locals: { plugins: @plugins }
 
 = paginate @plugins

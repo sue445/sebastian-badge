@@ -1,1 +1,9 @@
-h1 WIP
+.jumbotron
+  h1 Sebastian
+  p Embed Jenkins plugin badge site
+
+  = partial "plugins/form"
+
+h2 Latest released plugins
+
+= partial "plugins/list", locals: {plugins: @latest_released_plugins}
