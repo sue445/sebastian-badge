@@ -3,7 +3,7 @@ module GroongaInitializer
   require "groonga"
 
   def self.registered(app)
-    database_path = ENV["GROONGA_DATABASE_PATH"] || Padrino.root("db/groonga/#{Padrino.env}/db.groonga")
+    database_path = ENV["GROONGA_DATABASE_PATH"] || Padrino.root("groonga/database/#{Padrino.env}/db.groonga")
     if File.exist?(database_path)
       Groonga::Database.open(database_path)
     else
