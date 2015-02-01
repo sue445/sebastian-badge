@@ -1,5 +1,5 @@
 module Concerns
-  module Plugin
+  module PluginModules
     module Groonga
       extend ActiveSupport::Concern
 

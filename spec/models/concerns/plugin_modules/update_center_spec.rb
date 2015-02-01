@@ -1,4 +1,4 @@
-RSpec.describe Plugin do
+RSpec.describe Concerns::PluginModules::UpdateCenter do
   describe "#fetch_update_center_plugins" do
     subject { Plugin.fetch_update_center_plugins }
 
