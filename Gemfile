@@ -40,6 +40,9 @@ gem "dalli"
 gem "kaminari", require: "kaminari/sinatra"
 gem "rollbar"
 gem "rroonga"
+
+# NOTE: require sinatra 1.4.6+
+#   https://github.com/sue445/sebastian-badge/commit/c0b8324e3386b0c211b55df26bb32c7409ab45a6
 gem "sinatra", github: "sinatra"
 
 group :development do
