@@ -27,7 +27,7 @@ Sebastian::App.controllers :plugins do
     else
       conditions = Plugin.all
     end
-    @plugins = conditions.page(params[:page])
+    @plugins = conditions.order(released_at: :desc).page(params[:page])
 
     render :index
   end

@@ -1,9 +1,14 @@
 .jumbotron
   h1 Sebastian
-  p Embed Jenkins plugin badge site
+  p
+    | Hosting embed&nbsp;
+    = link_to "Jenkins", "http://jenkins-ci.org/"
+    | &nbsp;plugin badges
 
   = partial "plugins/form"
 
 h2 Latest released plugins
+
+= link_to "more plugins", url_for(:plugins, :index)
 
 = partial "plugins/list", locals: {plugins: @latest_released_plugins}
