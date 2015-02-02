@@ -19,8 +19,8 @@ ActiveRecord::Schema.define(version: 20150130135446) do
     t.string   "version"
     t.string   "wiki_url"
     t.datetime "released_at", null: false
-    t.datetime "created_at"
-    t.datetime "updated_at"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
   end
 
   add_index "plugins", ["name"], name: "index_plugins_on_name", unique: true
