@@ -34,6 +34,7 @@ heroku addons:add rollbar
 heroku addons:add newrelic:stark
 heroku addons:add memcachier:dev
 heroku addons:add scheduler
+heroku addons:add pgbackups:auto-month
 heroku config:add ROLLBAR_ACCESS_TOKEN=XXXXXXXXXXXXXXXX
 heroku config:set BUILDPACK_URL=https://github.com/groonga/heroku-buildpack-rroonga
 ```

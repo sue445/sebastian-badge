@@ -17,6 +17,7 @@
     "rollbar",
     "memcachier:dev",
     "scheduler",
+    "pgbackups:auto-month",
     "papertrail"
   ]
 }
