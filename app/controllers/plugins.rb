@@ -46,7 +46,7 @@ Sebastian::App.controllers :plugins do
   end
 
   before :show do
-    @plugin = Plugin.find_by(name: params[:name])
+    @plugin = Plugin.find_by!(name: params[:name])
     @title = @plugin.title
   end
 
