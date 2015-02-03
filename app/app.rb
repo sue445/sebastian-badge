@@ -86,6 +86,10 @@ module Sebastian
     #   end
     #
 
+    error ActiveRecord::RecordNotFound do
+      halt 404, "Not Found"
+    end
+
     if ENV["ROLLBAR_ACCESS_TOKEN"] && Padrino.env == :production
       require "rollbar/middleware/sinatra"
       Rollbar.configure do |config|
