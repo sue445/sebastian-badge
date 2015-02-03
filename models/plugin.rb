@@ -17,6 +17,8 @@
 #  index_plugins_on_released_at  (released_at)
 #
 
+require "digest/sha1"
+
 class Plugin < ActiveRecord::Base
   paginates_per 50
 
@@ -25,6 +27,10 @@ class Plugin < ActiveRecord::Base
 
   include Concerns::PluginModules::Groonga
   include Concerns::PluginModules::UpdateCenter
+
+  def sha1
+    Digest::SHA1.hexdigest("#{name}_#{version}_#{released_at.to_i}")
+  end
 
   private
 

@@ -33,6 +33,11 @@ Sebastian::App.controllers :plugins do
   end
 
   get :show, map: "/plugins/:name", provides: [:html, :svg], cache: settings.enabled_paging_cache? do
+    if content_type == :svg
+      last_modified @plugin.released_at
+      etag @plugin.sha1, :weak
+    end
+
     if settings.enabled_paging_cache?
       expires  1.day.to_i
     end
