@@ -1,4 +1,8 @@
-# Sebastian
+# Sebastian-badge.info
+Hosting embed Jenkins plugin badges
+
+http://sebastian-badge.info/
+
 [![Circle CI](https://circleci.com/gh/sue445/sebastian-badge/tree/master.svg?style=svg)](https://circleci.com/gh/sue445/sebastian-badge/tree/master)
 [![Dependency Status](https://gemnasium.com/sue445/sebastian-badge.svg)](https://gemnasium.com/sue445/sebastian-badge)
 [![Coverage Status](https://coveralls.io/repos/sue445/sebastian-badge/badge.svg)](https://coveralls.io/r/sue445/sebastian-badge)
