@@ -94,6 +94,7 @@ module Sebastian
       require "rollbar/middleware/sinatra"
       Rollbar.configure do |config|
         config.access_token = ENV["ROLLBAR_ACCESS_TOKEN"]
+        config.environment  = Padrino.env
       end
 
       use Rollbar::Middleware::Sinatra
