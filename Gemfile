@@ -48,6 +48,7 @@ gem "sinatra", github: "sinatra"
 
 group :development do
   gem "annotate"
+  gem "dotenv" , group: :test
   gem "foreman"
   gem "rubocop"
   gem "sqlite3", group: :test

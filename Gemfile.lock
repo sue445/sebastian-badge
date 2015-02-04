@@ -242,6 +242,7 @@ DEPENDENCIES
   coveralls
   dalli
   database_rewinder
+  dotenv
   factory_girl
   faker-precure
   foreman
