@@ -38,6 +38,7 @@ gem "padrino", "0.12.4"
 gem "activerecord-import"
 gem "dalli"
 gem "kaminari", require: "kaminari/sinatra"
+gem "newrelic_rpm"
 gem "rollbar"
 gem "rroonga"
 
