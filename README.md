@@ -33,7 +33,8 @@ RACK_ENV=test bundle exec rake groonga:setup
 bundle exec rspec
 ```
 
-## Setup Heroku
+## Heroku
+### Setup
 ```bash
 heroku addons:add papertrail
 heroku addons:add rollbar
@@ -46,4 +47,11 @@ heroku config:add NEW_RELIC_LICENSE_KEY=XXXXXXXXXXXXXXXX
 heroku config:set BUILDPACK_URL=https://github.com/groonga/heroku-buildpack-rroonga
 ```
 
+### Scheduler
+register `rake sebastian:update_center` to heroku scheduler
+
+![heroku-scheduler](doc/heroku-scheduler.png)
+
+### Deploy your Heroku account
 [![Deploy](https://www.herokucdn.com/deploy/button.png)](https://heroku.com/deploy)
+
