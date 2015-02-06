@@ -94,7 +94,7 @@ module Sebastian
     Rollbar.configure do |config|
       config.access_token = ENV["ROLLBAR_ACCESS_TOKEN"]
       config.environment  = Padrino.env
-      config.enabled      = !!ENV["ROLLBAR_ACCESS_TOKEN"] && Padrino.env != :test
+      config.enabled      = ENV["ROLLBAR_ACCESS_TOKEN"].present? && Padrino.env == :production
 
       config.exception_level_filters.merge!(
         "Sinatra::NotFound"            => "ignore",
