@@ -90,14 +90,13 @@ module Sebastian
       halt 404, "Not Found"
     end
 
-    if ENV["ROLLBAR_ACCESS_TOKEN"] && Padrino.env == :production
-      require "rollbar/middleware/sinatra"
-      Rollbar.configure do |config|
-        config.access_token = ENV["ROLLBAR_ACCESS_TOKEN"]
-        config.environment  = Padrino.env
-      end
-
-      use Rollbar::Middleware::Sinatra
+    require "rollbar/middleware/sinatra"
+    Rollbar.configure do |config|
+      config.access_token = ENV["ROLLBAR_ACCESS_TOKEN"]
+      config.environment  = Padrino.env
+      config.enabled      = !!ENV["ROLLBAR_ACCESS_TOKEN"] && Padrino.env != :test
     end
+
+    use Rollbar::Middleware::Sinatra
   end
 end
