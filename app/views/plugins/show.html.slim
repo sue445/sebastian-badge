@@ -20,3 +20,9 @@ form
       | HTML
     = text_field_tag :badge_html, class: "form-control click-select", readonly: true,
                      value: "<a href='#{@plugin.wiki_url}'><img src='#{badge_url(@plugin)}'/></a>"
+
+  .form-group
+    label for="badge_confluence"
+      | Confluence
+    = text_field_tag :badge_html, class: "form-control click-select", readonly: true,
+                     value: "[!#{badge_url(@plugin)}!|#{@plugin.wiki_url}]"
