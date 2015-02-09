@@ -3,8 +3,7 @@ AllCops:
   Exclude:
     - "vendor/**/*" # rubocop config/default.yml
     - "db/schema.rb"
-# TODO: require rubocop > 0.28.0
-#  DisplayCopNames: true
+  DisplayCopNames: true
 
 ##################### Style ##################################
 
