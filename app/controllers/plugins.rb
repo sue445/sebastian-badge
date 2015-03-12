@@ -39,10 +39,6 @@ Sebastian::App.controllers :plugins do
       last_modified @plugin.released_at
     end
 
-    if settings.enabled_paging_cache?
-      expires  1.day.to_i
-    end
-
     render "show.#{content_type}"
   end
 
