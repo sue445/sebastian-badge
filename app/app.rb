@@ -71,7 +71,7 @@ module Sebastian
       set :enabled_paging_cache, false
     end
     configure :production do
-      set :enabled_paging_cache, true
+      set :enabled_paging_cache, false
     end
 
     ##
