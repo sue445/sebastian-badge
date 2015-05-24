@@ -35,7 +35,7 @@ gem "padrino", "0.12.4"
 #   gem 'padrino-' + g, '0.12.4'
 # end
 
-gem "activerecord-import"
+gem "activerecord-import", "0.7.0"
 gem "dalli"
 gem "kaminari", require: "kaminari/sinatra"
 gem "newrelic_rpm"
