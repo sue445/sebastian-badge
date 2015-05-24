@@ -60,6 +60,8 @@ group :test do
   gem "rspec-padrino"
   gem "rspec-power_assert"
   gem "webmock"
+
+  gem "mysql2"
 end
 
 group :production do
