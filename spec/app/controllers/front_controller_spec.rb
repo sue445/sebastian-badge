@@ -1,11 +1,7 @@
 RSpec.describe "/front" do
-  pending "add some examples to #{__FILE__}" do
-    before do
-      get "/front"
-    end
+  describe "GET /" do
+    subject! { get "/" }
 
-    it "returns hello world" do
-      expect(last_response.body).to eq "Hello World"
-    end
+    it { expect(last_response).to be_ok }
   end
 end
