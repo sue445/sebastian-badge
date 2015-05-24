@@ -35,7 +35,7 @@ gem "padrino", "0.12.4"
 #   gem 'padrino-' + g, '0.12.4'
 # end
 
-gem "activerecord-import", "0.7.0"
+gem "activerecord-import"
 gem "dalli"
 gem "kaminari", require: "kaminari/sinatra"
 gem "newrelic_rpm"
@@ -60,6 +60,8 @@ group :test do
   gem "rspec-padrino"
   gem "rspec-power_assert"
   gem "webmock"
+
+  gem "mysql2"
 end
 
 group :production do
