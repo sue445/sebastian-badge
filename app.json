@@ -1,6 +1,8 @@
 {
   "name": "Sebastian-badge.info",
   "description": "Hosting embed Jenkins plugin badges",
+  "website": "http://sebastian-badge.info/",
+  "repository": "https://github.com/sue445/sebastian-badge",
   "keywords": ["ruby", "padrino", "Jenkins"],
   "scripts": {
     "postdeploy": "bundle exec rake ar:create ar:migrate sebastian:update_center"
