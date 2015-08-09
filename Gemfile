@@ -47,7 +47,7 @@ group :development do
   gem "annotate"
   gem "dotenv", group: :test
   gem "foreman"
-  gem "rubocop"
+  gem "rubocop", "0.30.0"
   gem "sqlite3", group: :test
 end
 
