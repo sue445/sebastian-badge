@@ -12,9 +12,7 @@ http://sebastian-badge.info/
 
 ## Setup
 ```bash
-cp config/database.yml{.example,}
 cp config/.env{.example,}
-vi config/database.yml
 vi config/.env
 
 bundle exec rake ar:create
