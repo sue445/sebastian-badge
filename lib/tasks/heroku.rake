@@ -47,5 +47,6 @@ params = CGI.parse(uri.query || "")
 <% end %>
       DATABASE_YML
     end
+    puts "Write config/database.yml"
   end
 end
