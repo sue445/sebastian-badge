@@ -155,7 +155,7 @@ GEM
       mime-types (>= 1.16, < 3.0)
       netrc (~> 0.7)
     rollbar (2.2.1)
-    rroonga (5.0.4)
+    rroonga (5.0.5)
       archive-zip
       groonga-client (>= 0.0.3)
       json
