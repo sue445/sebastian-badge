@@ -157,7 +157,7 @@ GEM
       http-cookie (>= 1.0.2, < 2.0)
       mime-types (>= 1.16, < 3.0)
       netrc (~> 0.7)
-    rollbar (2.6.1)
+    rollbar (2.6.3)
       multi_json
     rroonga (5.0.9)
       archive-zip
@@ -188,7 +188,7 @@ GEM
       power_assert (~> 0.2.0)
       rspec (>= 2.14)
     rspec-support (3.4.1)
-    rubicure (0.2.9)
+    rubicure (0.3.0)
       activesupport (>= 4.0.0)
       hashie (>= 2.0.5)
       sengiri_yaml (>= 0.0.2)
