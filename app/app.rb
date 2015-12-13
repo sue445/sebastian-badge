@@ -103,5 +103,9 @@ module Sebastian
     end
 
     use Rollbar::Middleware::Sinatra
+
+    ActiveRecord::SimpleIndexName.configure do |config|
+      config.auto_shorten = true
+    end
   end
 end

@@ -1,4 +1,6 @@
 class CreatePlugins < ActiveRecord::Migration
+  include ActiveRecord::SimpleIndexName::DisableShorten
+
   def self.up
     create_table :plugins do |t|
       t.string :name
