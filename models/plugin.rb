@@ -34,12 +34,12 @@ class Plugin < ActiveRecord::Base
 
   private
 
-  def clear_cache
-    %W(
-      /plugins/#{name}
-      /plugins/#{name}.svg
-    ).each do |key|
-      Sebastian::App.cache.delete(key)
+    def clear_cache
+      %W(
+        /plugins/#{name}
+        /plugins/#{name}.svg
+      ).each do |key|
+        Sebastian::App.cache.delete(key)
+      end
     end
-  end
 end

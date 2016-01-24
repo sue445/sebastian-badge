@@ -5,7 +5,7 @@ RSpec.describe Concerns::PluginModules::UpdateCenter do
     include_context :with_update_center_stub
 
     its(:count) { should eq stub_plugin_count }
-    it { should be_an_instance_of Hash  }
+    it { should be_an_instance_of Hash }
     it { should be_has_key "chatwork" }
   end
 

@@ -2,7 +2,7 @@ RSpec.describe "/plugins" do
   describe "GET /plugins/:name" do
     subject! { get "/plugins/#{name}" }
 
-    let(:name)  { plugin.name }
+    let(:name) { plugin.name }
     let(:plugin) { create(:plugin) }
 
     it { expect(last_response).to be_ok }

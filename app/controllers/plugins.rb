@@ -22,11 +22,13 @@ Sebastian::App.controllers :plugins do
   enable :caching
 
   get :index do
-    if params[:query].present?
-      conditions = search(params[:query])
-    else
-      conditions = Plugin.all
-    end
+    conditions =
+      if params[:query].present?
+        search(params[:query])
+      else
+        Plugin.all
+      end
+
     @plugins = conditions.order(released_at: :desc).page(params[:page])
 
     render :index

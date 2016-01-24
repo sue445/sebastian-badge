@@ -6,7 +6,7 @@ module Concerns
       module ClassMethods
         require "open-uri"
 
-        UPDATE_CENTER_URL = "https://updates.jenkins-ci.org/current/update-center.json"
+        UPDATE_CENTER_URL = "https://updates.jenkins-ci.org/current/update-center.json".freeze
 
         # get plugins in update-center.json
         # @return [Hash]
@@ -24,7 +24,7 @@ module Concerns
             title:       args["title"],
             version:     args["version"],
             wiki_url:    args["wiki"],
-            released_at: Time.zone.parse(args["releaseTimestamp"]),
+            released_at: Time.zone.parse(args["releaseTimestamp"])
           )
         end
 
@@ -41,37 +41,37 @@ module Concerns
 
         private
 
-        def update_plugins(plugins, newest_released_at)
-          updated_plugins = plugins.select { |plugin| plugin.released_at > newest_released_at }
+          def update_plugins(plugins, newest_released_at)
+            updated_plugins = plugins.select { |plugin| plugin.released_at > newest_released_at }
 
-          Plugin.transaction do
-            updated_plugins.each do |updated_plugin|
-              plugin = Plugin.find_or_initialize_by(name: updated_plugin.name)
-              plugin.update_attributes!(
-                title:       updated_plugin.title,
-                version:     updated_plugin.version,
-                wiki_url:    updated_plugin.wiki_url,
-                released_at: updated_plugin.released_at,
-              )
+            Plugin.transaction do
+              updated_plugins.each do |updated_plugin|
+                plugin = Plugin.find_or_initialize_by(name: updated_plugin.name)
+                plugin.update_attributes!(
+                  title:       updated_plugin.title,
+                  version:     updated_plugin.version,
+                  wiki_url:    updated_plugin.wiki_url,
+                  released_at: updated_plugin.released_at
+                )
+              end
+            end
+
+            updated_plugins
+          end
+
+          def bulk_insert_plugins(plugins)
+            Plugin.transaction do
+              Plugin.import(plugins)
+            end
+            plugins
+          end
+
+          # @return [Array<Plugin>]
+          def fetched_plugins
+            fetch_update_center_plugins.each_with_object([]) do |(_k, v), array|
+              array << build_from_update_center(v)
             end
           end
-
-          updated_plugins
-        end
-
-        def bulk_insert_plugins(plugins)
-          Plugin.transaction do
-            Plugin.import(plugins)
-          end
-          plugins
-        end
-
-        # @return [Array<Plugin>]
-        def fetched_plugins
-          fetch_update_center_plugins.each_with_object([]) do |(_k, v), array|
-            array << build_from_update_center(v)
-          end
-        end
       end
     end
   end
