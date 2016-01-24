@@ -7,7 +7,7 @@ RSpec.describe Plugin do
         :plugin,
         name:        "chatwork",
         version:     "0.0.4",
-        released_at: Time.zone.parse("2015-02-03"),
+        released_at: Time.zone.parse("2015-02-03")
       )
     end
 

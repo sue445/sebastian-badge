@@ -40,8 +40,6 @@ GEM
       io-like (~> 0.3.0)
     arel (6.0.3)
     ast (2.2.0)
-    astrolabe (1.3.1)
-      parser (~> 2.2)
     builder (3.2.2)
     coveralls (0.8.10)
       json (~> 1.8)
@@ -152,7 +150,7 @@ GEM
       rails-deprecated_sanitizer (>= 1.0.1)
     rails-html-sanitizer (1.0.2)
       loofah (~> 2.0)
-    rainbow (2.0.0)
+    rainbow (2.1.0)
     rake (10.5.0)
     rest-client (1.8.0)
       http-cookie (>= 1.0.2, < 2.0)
@@ -193,12 +191,11 @@ GEM
       activesupport (>= 4.0.0)
       hashie (>= 2.0.5)
       sengiri_yaml (>= 0.0.2)
-    rubocop (0.30.0)
-      astrolabe (~> 1.3)
-      parser (>= 2.2.0.1, < 3.0)
+    rubocop (0.36.0)
+      parser (>= 2.3.0.0, < 3.0)
       powerpack (~> 0.1)
       rainbow (>= 1.99.1, < 3.0)
-      ruby-progressbar (~> 1.4)
+      ruby-progressbar (~> 1.7)
     ruby-progressbar (1.7.5)
     safe_yaml (1.0.4)
     sass (3.4.21)
@@ -261,7 +258,7 @@ DEPENDENCIES
   rspec-its
   rspec-padrino
   rspec-power_assert
-  rubocop (= 0.30.0)
+  rubocop (= 0.36.0)
   sass
   sinatra (>= 1.4.6)
   slim
