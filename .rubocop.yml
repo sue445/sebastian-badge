@@ -1,4 +1,5 @@
-inherit_from: ".onkcop.yml"
+inherit_gem:
+  onkcop: "config/rubocop.yml"
 
 AllCops:
   TargetRubyVersion: 2.2
