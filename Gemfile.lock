@@ -96,6 +96,8 @@ GEM
     newrelic_rpm (3.14.1.311)
     nokogiri (1.6.7.2)
       mini_portile2 (~> 2.0.0.rc2)
+    onkcop (0.36.0.1)
+      rubocop (~> 0.36.0)
     padrino (0.13.1)
       padrino-admin (= 0.13.1)
       padrino-cache (= 0.13.1)
@@ -247,6 +249,7 @@ DEPENDENCIES
   foreman
   kaminari
   newrelic_rpm
+  onkcop (= 0.36.0.1)
   padrino (= 0.13.1)
   pg
   puma
