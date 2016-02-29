@@ -5,17 +5,28 @@
   "repository": "https://github.com/sue445/sebastian-badge",
   "keywords": ["ruby", "padrino", "Jenkins"],
   "scripts": {
-    "postdeploy": "bundle exec rake ar:create ar:migrate sebastian:update_center"
+    "postdeploy": "bundle exec rake ar:create ar:migrate && bundle exec rake sebastian:update_center"
   },
   "env": {
-    "BUILDPACK_URL": "https://github.com/groonga/heroku-buildpack-rroonga",
     "BUNDLE_WITHOUT": {
       "description": "bundle install --without <these>",
       "value": "test:development"
     }
   },
+  "buildpacks": [
+    {
+      "url": "https://codon-buildpacks.s3.amazonaws.com/buildpacks/groonga/groonga.tgz"
+    },
+    {
+      "url": "heroku/ruby"
+    },
+    {
+      "url": "https://codon-buildpacks.s3.amazonaws.com/buildpacks/groonga/rroonga.tgz"
+    }
+  ],
   "addons": [
-    "newrelic:stark",
+    "heroku-postgresql:hobby-dev",
+    "newrelic:wayne",
     "rollbar",
     "memcachier:dev",
     "scheduler",

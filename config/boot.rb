@@ -41,7 +41,7 @@ Padrino::Logger::Config[:test][:log_level] = :info
 #
 Padrino.before_load do
   Time.zone = "UTC"
-  Dotenv.load unless Padrino.env == :production
+  Dotenv.load if defined?(Dotenv) && Padrino.env != :production
 end
 
 ##
