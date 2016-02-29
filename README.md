@@ -36,7 +36,7 @@ bundle exec rspec
 ```bash
 heroku addons:add papertrail
 heroku addons:add rollbar
-heroku addons:add newrelic:stark
+heroku addons:add newrelic:wayne
 heroku addons:add memcachier:dev
 heroku addons:add scheduler
 heroku addons:add pgbackups:auto-month

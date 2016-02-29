@@ -15,7 +15,7 @@
     }
   },
   "addons": [
-    "newrelic:stark",
+    "newrelic:wayne",
     "rollbar",
     "memcachier:dev",
     "scheduler",
