@@ -43,4 +43,3 @@ deployment:
           timeout: 400 # if your deploys take a long time
       - heroku run rake sebastian:clear_all_cache --app $HEROKU_APP_NAME
       - ./script/notify_to_slack.sh "Heroku Deploy" "Deploy successful"
-
