@@ -34,6 +34,7 @@ bundle exec rspec
 ## Heroku
 ### Setup
 ```bash
+heroku addons:add heroku-postgresql:hobby-dev
 heroku addons:add papertrail
 heroku addons:add rollbar
 heroku addons:add newrelic:wayne
