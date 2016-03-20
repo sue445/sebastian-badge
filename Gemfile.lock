@@ -85,7 +85,7 @@ GEM
     minitest (5.8.4)
     moneta (0.7.20)
     multi_json (1.11.2)
-    mustermann19 (0.4.2)
+    mustermann19 (0.4.3)
       enumerable-lazy
     newrelic_rpm (3.15.0.314)
     nokogiri (1.6.7.2)
@@ -130,7 +130,7 @@ GEM
     pkg-config (1.1.7)
     power_assert (0.2.7)
     powerpack (0.1.1)
-    puma (3.1.0)
+    puma (3.1.1)
     rack (1.6.4)
     rack-protection (1.5.3)
       rack
@@ -177,7 +177,7 @@ GEM
       power_assert (~> 0.2.0)
       rspec (>= 2.14)
     rspec-support (3.4.1)
-    rubicure (0.4.1)
+    rubicure (0.4.3)
       activesupport (>= 4.0.0)
       hashie (>= 2.0.5)
       sengiri_yaml (>= 0.0.2)
