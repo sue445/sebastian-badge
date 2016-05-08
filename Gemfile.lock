@@ -87,7 +87,7 @@ GEM
     mini_portile2 (2.0.0)
     minitest (5.8.4)
     moneta (0.7.20)
-    multi_json (1.11.3)
+    multi_json (1.12.0)
     mustermann19 (0.4.3)
       enumerable-lazy
     newrelic_rpm (3.15.2.317)
@@ -149,7 +149,7 @@ GEM
       loofah (~> 2.0)
     rainbow (2.1.0)
     rake (10.5.0)
-    rollbar (2.11.1)
+    rollbar (2.11.2)
       multi_json
     rroonga (6.0.0)
       archive-zip
@@ -215,7 +215,7 @@ GEM
     tins (1.6.0)
     tzinfo (1.2.2)
       thread_safe (~> 0.1)
-    webmock (2.0.0)
+    webmock (2.0.1)
       addressable (>= 2.3.6)
       crack (>= 0.3.2)
       hashdiff
