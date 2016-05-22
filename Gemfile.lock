@@ -21,7 +21,7 @@ GEM
       activemodel (= 4.2.6)
       activesupport (= 4.2.6)
       arel (~> 6.0)
-    activerecord-import (0.7.0)
+    activerecord-import (0.13.0)
       activerecord (>= 3.0)
     activerecord-simple_index_name (0.2.0)
       activerecord
@@ -225,7 +225,7 @@ PLATFORMS
 
 DEPENDENCIES
   activerecord (>= 3.1)
-  activerecord-import (= 0.7.0)
+  activerecord-import
   activerecord-simple_index_name
   annotate
   coveralls
@@ -255,5 +255,8 @@ DEPENDENCIES
   sqlite3
   webmock
 
+RUBY VERSION
+   ruby 2.3.1p112
+
 BUNDLED WITH
-   1.11.2
+   1.12.3
