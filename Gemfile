@@ -41,7 +41,7 @@ gem "dalli"
 gem "kaminari", require: "kaminari/sinatra"
 gem "newrelic_rpm"
 gem "rollbar"
-gem "rroonga", "6.0.0"
+gem "rroonga"
 gem "sinatra", ">= 1.4.6"
 
 group :development do
