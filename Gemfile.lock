@@ -67,7 +67,7 @@ GEM
       gqtp (>= 1.0.4)
       groonga-command (>= 1.2.0)
       hashie
-    groonga-command (1.2.0)
+    groonga-command (1.2.2)
       json
     hashdiff (0.3.0)
     hashie (3.4.4)
@@ -212,7 +212,7 @@ GEM
     thor (0.19.1)
     thread_safe (0.3.5)
     tilt (2.0.5)
-    tins (1.11.0)
+    tins (1.12.0)
     tzinfo (1.2.2)
       thread_safe (~> 0.1)
     webmock (2.1.0)
