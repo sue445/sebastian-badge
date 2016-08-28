@@ -88,7 +88,7 @@ GEM
     multi_json (1.12.1)
     mustermann19 (0.4.4)
       enumerable-lazy
-    newrelic_rpm (3.16.1.320)
+    newrelic_rpm (3.16.2.321)
     nokogiri (1.6.8)
       mini_portile2 (~> 2.1.0)
       pkg-config (~> 1.1.7)
