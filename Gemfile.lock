@@ -23,7 +23,7 @@ GEM
       arel (~> 6.0)
     activerecord-import (0.7.0)
       activerecord (>= 3.0)
-    activerecord-simple_index_name (0.3.0)
+    activerecord-simple_index_name (0.4.0)
       activerecord
       activesupport
     activesupport (4.2.7.1)
@@ -81,7 +81,7 @@ GEM
       nokogiri (>= 1.5.9)
     mail (2.6.4)
       mime-types (>= 1.16, < 4)
-    mime-types (2.99.2)
+    mime-types (2.99.3)
     mini_portile2 (2.1.0)
     minitest (5.9.0)
     moneta (0.7.20)
@@ -131,7 +131,7 @@ GEM
       ast (~> 2.2)
     pg (0.18.4)
     pkg-config (1.1.7)
-    power_assert (0.3.0)
+    power_assert (0.3.1)
     powerpack (0.1.1)
     puma (3.6.0)
     rack (1.6.4)
