@@ -51,7 +51,7 @@ GEM
     crack (0.4.3)
       safe_yaml (~> 1.0.0)
     dalli (2.7.6)
-    database_rewinder (0.6.5)
+    database_rewinder (0.7.0)
     diff-lcs (1.2.5)
     docile (1.1.5)
     dotenv (2.1.1)
@@ -89,7 +89,7 @@ GEM
     multi_json (1.12.1)
     mustermann19 (0.4.4)
       enumerable-lazy
-    newrelic_rpm (3.17.0.325)
+    newrelic_rpm (3.17.1.326)
     nokogiri (1.6.8.1)
       mini_portile2 (~> 2.1.0)
     padrino (0.13.2)
@@ -133,9 +133,9 @@ GEM
     pkg-config (1.1.7)
     power_assert (0.3.1)
     powerpack (0.1.1)
-    public_suffix (2.0.3)
+    public_suffix (2.0.4)
     puma (3.6.0)
-    rack (1.6.4)
+    rack (1.6.5)
     rack-protection (1.5.3)
       rack
     rack-test (0.6.3)
@@ -152,7 +152,7 @@ GEM
     rake (11.3.0)
     rollbar (2.13.3)
       multi_json
-    rroonga (6.0.9)
+    rroonga (6.1.0)
       archive-zip
       groonga-client (>= 0.0.3)
       json
