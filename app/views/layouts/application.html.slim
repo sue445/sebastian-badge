@@ -11,7 +11,7 @@ html
     meta property="og:url"         content="http://sebastian-badge.info/"
     title= [@title, "Sebastian-badge.info"].compact.join(" | ")
     = stylesheet_link_tag 'bootstrap.min', 'application'
-    = javascript_include_tag 'jquery', 'jquery-ujs', 'bootstrap.min', 'application'
+    = javascript_include_tag 'jquery.min', 'jquery-ujs', 'bootstrap.min', 'application'
     = yield_content :include
 
     /! Le HTML5 shim, for IE6-8 support of HTML elements
