@@ -36,6 +36,7 @@ gem "padrino", "0.13.3.3"
 # end
 
 gem "activerecord-simple_index_name"
+gem "bundler"
 gem "dalli"
 gem "kaminari", require: "kaminari/sinatra"
 gem "newrelic_rpm"

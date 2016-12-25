@@ -224,6 +224,7 @@ DEPENDENCIES
   activerecord (~> 5.0.1)
   activerecord-simple_index_name
   annotate
+  bundler
   coveralls
   dalli
   database_rewinder
