@@ -35,7 +35,6 @@ gem "padrino", "0.13.3.3"
 #   gem 'padrino-' + g, '0.12.4'
 # end
 
-gem "activerecord-import"
 gem "activerecord-simple_index_name"
 gem "dalli"
 gem "kaminari", require: "kaminari/sinatra"

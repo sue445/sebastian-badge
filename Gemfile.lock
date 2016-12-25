@@ -20,8 +20,6 @@ GEM
       activemodel (= 5.0.1)
       activesupport (= 5.0.1)
       arel (~> 7.0)
-    activerecord-import (0.16.2)
-      activerecord (>= 3.2)
     activerecord-simple_index_name (0.4.0)
       activerecord
       activesupport
@@ -224,7 +222,6 @@ PLATFORMS
 
 DEPENDENCIES
   activerecord (~> 5.0.1)
-  activerecord-import
   activerecord-simple_index_name
   annotate
   coveralls
