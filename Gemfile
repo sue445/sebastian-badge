@@ -18,14 +18,14 @@ gem "rake"
 # Component requirements
 gem "sass"
 gem "slim"
-gem "activerecord", ">= 3.1", require: "active_record"
+gem "activerecord", "~> 5.0.1", require: "active_record"
 
 # Test requirements
 gem "rspec", group: "test"
 gem "rack-test", require: "rack/test", group: "test"
 
 # Padrino Stable Gem
-gem "padrino", "0.13.2"
+gem "padrino", "0.13.3.3"
 
 # Or Padrino Edge
 # gem 'padrino', :github => 'padrino/padrino-framework'
@@ -35,7 +35,6 @@ gem "padrino", "0.13.2"
 #   gem 'padrino-' + g, '0.12.4'
 # end
 
-gem "actionpack", "~> 4.2.7"
 gem "activerecord-import", "0.7.0"
 gem "activerecord-simple_index_name"
 gem "dalli"
@@ -43,7 +42,7 @@ gem "kaminari", require: "kaminari/sinatra"
 gem "newrelic_rpm"
 gem "rollbar"
 gem "rroonga"
-gem "sinatra", ">= 1.4.6"
+gem "sinatra", "~> 2.0.0.beta2"
 
 group :development do
   gem "annotate"
