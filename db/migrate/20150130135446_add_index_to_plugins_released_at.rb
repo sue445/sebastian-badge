@@ -1,4 +1,4 @@
-class AddIndexToPluginsReleasedAt < ActiveRecord::Migration
+class AddIndexToPluginsReleasedAt < ActiveRecord::Migration[4.2]
   include ActiveRecord::SimpleIndexName::DisableShorten
 
   def self.up

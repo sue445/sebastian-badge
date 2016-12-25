@@ -1,4 +1,3 @@
-# encoding: UTF-8
 # This file is auto-generated from the current state of the database. Instead
 # of editing this file, please use the migrations feature of Active Record to
 # incrementally modify your database, and then regenerate this schema definition.
@@ -21,9 +20,8 @@ ActiveRecord::Schema.define(version: 20150130135446) do
     t.datetime "released_at", null: false
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
+    t.index ["name"], name: "index_plugins_on_name", unique: true
+    t.index ["released_at"], name: "index_plugins_on_released_at"
   end
-
-  add_index "plugins", ["name"], name: "index_plugins_on_name", unique: true
-  add_index "plugins", ["released_at"], name: "index_plugins_on_released_at"
 
 end

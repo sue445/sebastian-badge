@@ -1,4 +1,6 @@
 require "bundler/setup"
+
+$LOAD_PATH.push("#{__dir__}/lib")
 require "padrino-core/cli/rake"
 
 PadrinoTasks.use(:database)
