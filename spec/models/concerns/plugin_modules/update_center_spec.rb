@@ -61,7 +61,7 @@ RSpec.describe Concerns::PluginModules::UpdateCenter do
       before do
         Plugin.import_from_update_center
 
-        second_fetched_plugins = Plugin.all
+        second_fetched_plugins = Plugin.all.to_a
 
         @updated_plugin = second_fetched_plugins.first
         @updated_plugin.released_at = 1.month.from_now
