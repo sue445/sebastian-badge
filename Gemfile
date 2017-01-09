@@ -38,7 +38,8 @@ gem "padrino", "0.13.3.3"
 gem "activerecord-simple_index_name"
 gem "bundler"
 gem "dalli"
-gem "kaminari", require: "kaminari/sinatra"
+gem "kaminari-activerecord", "~> 1.0.0.rc1"
+gem "kaminari-sinatra", "~> 1.0.0.rc1"
 gem "newrelic_rpm"
 gem "rollbar"
 gem "rroonga"
@@ -54,7 +55,7 @@ end
 
 group :test do
   gem "coveralls", require: false
-  gem "database_rewinder"
+  gem "database_rewinder", require: false
   gem "factory_girl"
   gem "faker-precure"
   gem "rspec-its"
