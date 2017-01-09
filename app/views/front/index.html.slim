@@ -9,6 +9,6 @@
 
 h2 Latest released plugins
 
-= link_to "more plugins", url_for(:plugins, :index)
+= link_to "more plugins", url(:plugins, :index)
 
 = partial "plugins/list", locals: {plugins: @latest_released_plugins}
