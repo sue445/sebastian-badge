@@ -236,8 +236,8 @@ DEPENDENCIES
   factory_girl
   faker-precure
   foreman
-  kaminari-activerecord
-  kaminari-sinatra
+  kaminari-activerecord (>= 1.0.0)
+  kaminari-sinatra (>= 1.0.0)
   newrelic_rpm
   padrino (= 0.13.3.3)
   pg
@@ -257,5 +257,8 @@ DEPENDENCIES
   sqlite3
   webmock
 
+RUBY VERSION
+   ruby 2.4.0p0
+
 BUNDLED WITH
-   1.13.6
+   1.13.7
