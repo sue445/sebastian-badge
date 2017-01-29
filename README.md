@@ -47,7 +47,7 @@ heroku config:set BUILDPACK_URL=https://github.com/groonga/heroku-buildpack-rroo
 ```
 
 ### Scheduler
-register `rake sebastian:update_center` to heroku scheduler
+register `bundle exec rake sebastian:update_center` to heroku scheduler
 
 ![heroku-scheduler](doc/heroku-scheduler.png)
 
