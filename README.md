@@ -53,4 +53,3 @@ register `rake sebastian:update_center` to heroku scheduler
 
 ### Deploy your Heroku account
 [![Deploy](https://www.herokucdn.com/deploy/button.png)](https://heroku.com/deploy)
-
