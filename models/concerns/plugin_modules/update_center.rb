@@ -11,7 +11,7 @@ module Concerns
         # get plugins in update-center.json
         # @return [Hash]
         def fetch_update_center_plugins
-          jsonp = open(UPDATE_CENTER_URL).read
+          jsonp = open(UPDATE_CENTER_URL, ssl_verify_mode: OpenSSL::SSL::VERIFY_NONE).read
           json = jsonp.gsub(/updateCenter.post\((.+)\);/m) { Regexp.last_match[1] }
           JSON.parse(json)["plugins"]
         end
