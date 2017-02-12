@@ -49,6 +49,8 @@ group :development do
   gem "annotate"
   gem "dotenv", group: :test
   gem "foreman"
+  gem "pry-byebug", group: :test
+  gem "pry-padrino", group: :test
   gem "rubocop", "0.36.0"
   gem "sqlite3", group: :test
 end
