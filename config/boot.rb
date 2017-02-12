@@ -7,6 +7,12 @@ require "rubygems" unless defined?(Gem)
 require "bundler/setup"
 Bundler.require(:default, RACK_ENV)
 
+# After `require "kaminari/sinatra"`, "Rails" module is defined in rails-html-sanitizer
+# https://github.com/rails/rails-html-sanitizer/blob/v1.0.3/lib/rails/html/sanitizer.rb#L1
+# error occurred following
+# https://github.com/intridea/hashie/blob/v3.5.3/lib/hashie.rb#L60
+require "kaminari/sinatra"
+
 ##
 # ## Enable devel logging
 #

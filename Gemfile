@@ -39,7 +39,7 @@ gem "activerecord-simple_index_name"
 gem "bundler"
 gem "dalli"
 gem "kaminari-activerecord", ">= 1.0.0"
-gem "kaminari-sinatra", ">= 1.0.0"
+gem "kaminari-sinatra", ">= 1.0.0", require: false
 gem "newrelic_rpm"
 gem "rollbar"
 gem "rroonga"
