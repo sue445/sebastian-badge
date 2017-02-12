@@ -55,7 +55,7 @@ end
 
 group :test do
   gem "coveralls", require: false
-  gem "database_rewinder", require: false
+  gem "database_cleaner"
   gem "factory_girl"
   gem "faker-precure"
   gem "rspec-its"
