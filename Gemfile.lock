@@ -267,10 +267,13 @@ DEPENDENCIES
   rspec-power_assert
   rubocop (= 0.36.0)
   sass
-  sinatra (~> 2.0.0.beta2)
+  sinatra (= 2.0.0.rc2)
   slim
   sqlite3
   webmock
 
+RUBY VERSION
+   ruby 2.4.1p111
+
 BUNDLED WITH
-   1.14.3
+   1.14.6

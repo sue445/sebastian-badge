@@ -43,7 +43,7 @@ gem "kaminari-sinatra", ">= 1.0.0", require: false
 gem "newrelic_rpm"
 gem "rollbar"
 gem "rroonga", "6.1.3" # When use v7.0.2, Heroku deploy is failure
-gem "sinatra", "~> 2.0.0.beta2"
+gem "sinatra", "2.0.0.rc2"
 
 group :development do
   gem "annotate"
