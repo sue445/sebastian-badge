@@ -18,14 +18,14 @@ gem "rake"
 # Component requirements
 gem "sass"
 gem "slim"
-gem "activerecord", "~> 5.0.1", require: "active_record"
+gem "activerecord", require: "active_record"
 
 # Test requirements
 gem "rspec", group: "test"
 gem "rack-test", require: "rack/test", group: "test"
 
 # Padrino Stable Gem
-gem "padrino", "0.13.3.3"
+gem "padrino", "~> 0.14.0.1"
 
 # Or Padrino Edge
 # gem 'padrino', :github => 'padrino/padrino-framework'
@@ -43,7 +43,7 @@ gem "kaminari-sinatra", ">= 1.0.0", require: false
 gem "newrelic_rpm"
 gem "rollbar"
 gem "rroonga", "6.1.3" # When use v7.0.2, Heroku deploy is failure
-gem "sinatra", "~> 2.0.0.beta2"
+gem "sinatra", "2.0.0.rc2"
 
 group :development do
   gem "annotate"
@@ -61,7 +61,7 @@ group :test do
   gem "factory_girl"
   gem "faker-precure"
   gem "rspec-its"
-  gem "rspec-padrino"
+  gem "rspec-padrino", github: "sue445/rspec-padrino", branch: "padrino-0.14", ref: "ec42ea"
   gem "rspec-power_assert"
   gem "webmock"
 end
