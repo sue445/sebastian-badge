@@ -61,7 +61,7 @@ group :test do
   gem "factory_girl"
   gem "faker-precure"
   gem "rspec-its"
-  gem "rspec-padrino"
+  gem "rspec-padrino", github: "sue445/rspec-padrino", branch: "padrino-0.14", ref: "ec42ea"
   gem "rspec-power_assert"
   gem "webmock"
 end

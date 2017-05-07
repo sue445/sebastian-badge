@@ -1,3 +1,15 @@
+GIT
+  remote: git://github.com/sue445/rspec-padrino.git
+  revision: ec42ea007b917d40f08d89672be0917679b323c6
+  ref: ec42ea
+  branch: padrino-0.14
+  specs:
+    rspec-padrino (0.2.2)
+      padrino-core (~> 0.13)
+      rack-test
+      rspec (>= 2.0)
+      sinatra
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -183,11 +195,6 @@ GEM
     rspec-mocks (3.5.0)
       diff-lcs (>= 1.2.0, < 2.0)
       rspec-support (~> 3.5.0)
-    rspec-padrino (0.2.2)
-      padrino-core (~> 0.13.0)
-      rack-test
-      rspec (>= 2.0)
-      sinatra
     rspec-power_assert (1.0.0)
       power_assert (~> 1.0.0)
       rspec (>= 2.14)
@@ -263,7 +270,7 @@ DEPENDENCIES
   rroonga (= 6.1.3)
   rspec
   rspec-its
-  rspec-padrino
+  rspec-padrino!
   rspec-power_assert
   rubocop (= 0.36.0)
   sass
