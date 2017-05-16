@@ -25,7 +25,10 @@ gem "rspec", group: "test"
 gem "rack-test", require: "rack/test", group: "test"
 
 # Padrino Stable Gem
-gem "padrino", "~> 0.14.0.1"
+gem "padrino"
+
+# NOTE: padrino requires since https://github.com/padrino/padrino-framework/commit/06cb7a779ba8899723177b900eeb67c76d04c844 ?
+gem "haml"
 
 # Or Padrino Edge
 # gem 'padrino', :github => 'padrino/padrino-framework'
@@ -43,7 +46,6 @@ gem "kaminari-sinatra", ">= 1.0.0", require: false
 gem "newrelic_rpm"
 gem "rollbar"
 gem "rroonga", "6.1.3" # When use v7.0.2, Heroku deploy is failure
-gem "sinatra", "2.0.0.rc2"
 
 group :development do
   gem "annotate"
