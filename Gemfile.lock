@@ -1,11 +1,10 @@
 GIT
   remote: git://github.com/sue445/rspec-padrino.git
-  revision: ec42ea007b917d40f08d89672be0917679b323c6
-  ref: ec42ea
+  revision: 4d3a8095a48f1006c024574f36ed5d70b54e4c21
   branch: padrino-0.14
   specs:
     rspec-padrino (0.2.2)
-      padrino-core (~> 0.13)
+      padrino-core (>= 0.13.0)
       rack-test
       rspec (>= 2.0)
       sinatra
