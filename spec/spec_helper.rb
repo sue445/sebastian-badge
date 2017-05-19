@@ -112,19 +112,13 @@ RSpec.configure do |config|
   config.order = :random
 
   config.before(:suite) do
-    DatabaseCleaner.strategy = :transaction
-    DatabaseCleaner.clean_with(:truncation)
+    DatabaseRewinder.clean_all
+    # or
+    # DatabaseRewinder.clean_with :any_arg_that_would_be_actually_ignored_anyway
   end
 
-  config.around(:each) do |example|
-    DatabaseCleaner.cleaning do
-      example.run
-    end
-  end
-
-  config.after do
-    # clear all memcache
-    Sebastian::App.cache.clear
+  config.after(:each) do
+    DatabaseRewinder.clean
   end
 end
 
