@@ -197,7 +197,7 @@ GEM
       power_assert (~> 1.0.0)
       rspec (>= 2.14)
     rspec-support (3.6.0)
-    rubicure (1.0.2)
+    rubicure (1.0.3)
       activesupport (>= 5.0.0)
       hashie (>= 2.0.5)
       sengiri_yaml (>= 0.0.2)
@@ -208,13 +208,13 @@ GEM
       ruby-progressbar (~> 1.7)
     ruby-progressbar (1.8.1)
     safe_yaml (1.0.4)
-    sass (3.4.23)
+    sass (3.4.24)
     sengiri_yaml (0.0.3)
     simplecov (0.14.1)
       docile (~> 1.1.0)
       json (>= 1.8, < 3)
       simplecov-html (~> 0.10.0)
-    simplecov-html (0.10.0)
+    simplecov-html (0.10.1)
     sinatra (2.0.0)
       mustermann (~> 1.0)
       rack (~> 2.0)
@@ -231,7 +231,7 @@ GEM
     thor (0.19.4)
     thread_safe (0.3.6)
     tilt (2.0.7)
-    tins (1.13.3)
+    tins (1.14.0)
     tzinfo (1.2.3)
       thread_safe (~> 0.1)
     webmock (3.0.1)
@@ -275,9 +275,6 @@ DEPENDENCIES
   slim
   sqlite3
   webmock
-
-RUBY VERSION
-   ruby 2.4.1p111
 
 BUNDLED WITH
    1.14.6
