@@ -94,7 +94,7 @@ GEM
     mustermann (1.0.0)
     mustermann19 (0.4.4)
       enumerable-lazy
-    newrelic_rpm (4.1.0.333)
+    newrelic_rpm (4.2.0.334)
     nokogiri (1.7.2)
       mini_portile2 (~> 2.1.0)
     padrino (0.14.1.1)
