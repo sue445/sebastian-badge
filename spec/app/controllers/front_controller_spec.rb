@@ -1,4 +1,4 @@
-RSpec.describe "/front" do
+RSpec.describe "/front" do # rubocop:disable RSpec/DescribeClass
   describe "GET /" do
     subject! { get "/" }
 

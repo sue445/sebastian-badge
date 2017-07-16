@@ -26,6 +26,7 @@ database:
 test:
   override:
     - bundle exec rspec
+    - bundle exec rubocop
 
 ## Customize deployment commands
 deployment:

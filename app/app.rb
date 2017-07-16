@@ -36,7 +36,7 @@ module Sebastian
       password:             ENV["MEMCACHIER_PASSWORD"],
       failover:             true,
       socket_timeout:       1.5,
-      socket_failure_delay: 0.2
+      socket_failure_delay: 0.2,
     )
     set :cache, Padrino::Cache.new(:Memcached, backend: cache)
 
@@ -98,7 +98,7 @@ module Sebastian
 
       config.exception_level_filters.merge!(
         "Sinatra::NotFound"            => "ignore",
-        "ActiveRecord::RecordNotFound" => "ignore"
+        "ActiveRecord::RecordNotFound" => "ignore",
       )
     end
 

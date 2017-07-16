@@ -24,7 +24,7 @@ module Concerns
             title:       args["title"],
             version:     args["version"],
             wiki_url:    args["wiki"],
-            released_at: Time.zone.parse(args["releaseTimestamp"])
+            released_at: Time.zone.parse(args["releaseTimestamp"]),
           )
         end
 
@@ -51,7 +51,7 @@ module Concerns
                   title:       updated_plugin.title,
                   version:     updated_plugin.version,
                   wiki_url:    updated_plugin.wiki_url,
-                  released_at: updated_plugin.released_at
+                  released_at: updated_plugin.released_at,
                 )
               end
             end
@@ -61,9 +61,7 @@ module Concerns
 
           def bulk_insert_plugins(plugins)
             Plugin.transaction do
-              plugins.each do |plugin|
-                plugin.save!
-              end
+              plugins.each(&:save!)
             end
             plugins
           end

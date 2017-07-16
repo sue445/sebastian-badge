@@ -35,10 +35,10 @@ class Plugin < ActiveRecord::Base
   private
 
     def clear_cache
-      %W(
+      %W[
         /plugins/#{name}
         /plugins/#{name}.svg
-      ).each do |key|
+      ].each do |key|
         Sebastian::App.cache.delete(key)
       end
     end

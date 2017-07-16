@@ -1,4 +1,4 @@
-RSpec.describe "/plugins" do
+RSpec.describe "/plugins" do # rubocop:disable RSpec/DescribeClass
   describe "GET /plugins/:name" do
     subject! { get "/plugins/#{name}" }
 

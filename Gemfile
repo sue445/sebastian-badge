@@ -16,13 +16,13 @@ ruby "2.4.1"
 gem "rake"
 
 # Component requirements
+gem "activerecord", require: "active_record"
 gem "sass"
 gem "slim"
-gem "activerecord", require: "active_record"
 
 # Test requirements
-gem "rspec", group: "test"
 gem "rack-test", require: "rack/test", group: "test"
+gem "rspec", group: "test"
 
 # Padrino Stable Gem
 gem "padrino"
@@ -48,9 +48,10 @@ group :development do
   gem "annotate"
   gem "dotenv", group: :test
   gem "foreman"
+  gem "onkcop"
   gem "pry-byebug", group: :test
   gem "pry-padrino", group: :test
-  gem "rubocop", "0.36.0"
+  gem "rubocop"
   gem "sqlite3", group: :test
 end
 
