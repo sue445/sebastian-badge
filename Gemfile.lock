@@ -282,7 +282,6 @@ DEPENDENCIES
   rspec-its
   rspec-padrino
   rspec-power_assert
-  rubocop
   sass
   slim
   sqlite3
