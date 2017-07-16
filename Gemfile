@@ -51,7 +51,6 @@ group :development do
   gem "onkcop", require: false
   gem "pry-byebug", group: :test
   gem "pry-padrino", group: :test
-  gem "rubocop", require: false
   gem "sqlite3", group: :test
 end
 
