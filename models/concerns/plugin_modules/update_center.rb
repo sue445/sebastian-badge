@@ -61,9 +61,7 @@ module Concerns
 
           def bulk_insert_plugins(plugins)
             Plugin.transaction do
-              plugins.each do |plugin|
-                plugin.save!
-              end
+              plugins.each(&:save!)
             end
             plugins
           end
