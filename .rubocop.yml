@@ -13,3 +13,6 @@ AllCops:
 
 Lint/ScriptPermission:
   Enabled: false
+
+Metrics/BlockLength:
+  Max: 36
