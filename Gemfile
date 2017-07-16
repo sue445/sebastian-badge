@@ -48,6 +48,7 @@ group :development do
   gem "annotate"
   gem "dotenv", group: :test
   gem "foreman"
+  gem "onkcop"
   gem "pry-byebug", group: :test
   gem "pry-padrino", group: :test
   gem "rubocop"
