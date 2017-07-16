@@ -50,7 +50,7 @@ group :development do
   gem "foreman"
   gem "pry-byebug", group: :test
   gem "pry-padrino", group: :test
-  gem "rubocop", "0.36.0"
+  gem "rubocop"
   gem "sqlite3", group: :test
 end
 
