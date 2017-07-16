@@ -48,10 +48,10 @@ group :development do
   gem "annotate"
   gem "dotenv", group: :test
   gem "foreman"
-  gem "onkcop"
+  gem "onkcop", require: false
   gem "pry-byebug", group: :test
   gem "pry-padrino", group: :test
-  gem "rubocop"
+  gem "rubocop", require: false
   gem "sqlite3", group: :test
 end
 
