@@ -117,7 +117,7 @@ RSpec.configure do |config|
     # DatabaseRewinder.clean_with :any_arg_that_would_be_actually_ignored_anyway
   end
 
-  config.after(:each) do
+  config.after do
     DatabaseRewinder.clean
   end
 end
