@@ -50,7 +50,7 @@ GEM
     dotenv (2.2.1)
     enumerable-lazy (0.0.2)
     erubi (1.7.0)
-    factory_bot (4.9.0)
+    factory_bot (4.8.2)
       activesupport (>= 3.0.0)
     faker-precure (0.0.5)
       rubicure (>= 1.0.5)
@@ -287,6 +287,9 @@ DEPENDENCIES
   slim
   sqlite3
   webmock
+
+RUBY VERSION
+   ruby 2.4.1p111
 
 BUNDLED WITH
    1.15.4
