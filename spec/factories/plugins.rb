@@ -1,4 +1,4 @@
-FactoryGirl.define do
+FactoryBot.define do
   factory :plugin do
     name        { Faker::Precure.user_name }
     title       { Faker::Precure.title }
