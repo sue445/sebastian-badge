@@ -1,0 +1,103 @@
+version: 2.0
+
+default: &default
+  docker:
+    - image: circleci/ruby:2.4.1-node
+      environment:
+        RACK_ENV: test
+    - image: circleci/postgres:9.4.12-alpine
+      environment:
+        POSTGRES_USER: ubuntu
+        POSTGRES_DB: circle_test
+    - image: memcached:1.5
+  working_directory: ~/app
+
+jobs:
+  checkout_code:
+    <<: *default
+
+    steps:
+      - checkout
+      - save_cache:
+          key: v1-repo-{{ .Environment.CIRCLE_SHA1 }}
+          paths:
+            - ~/app
+
+  bundle_dependencies:
+    <<: *default
+
+    steps:
+      - restore_cache:
+          key: v1-repo-{{ .Environment.CIRCLE_SHA1 }}
+      - restore_cache:
+          keys:
+            - v1-bundle-{{ .Environment.CIRCLE_BRANCH }}
+            - v1-bundle-master
+      - run: bundle install --path vendor/bundle
+      - run: bundle clean
+      - save_cache:
+          key: v1-bundle-{{ .Environment.CIRCLE_BRANCH }}
+          paths:
+            - ~/app/vendor/bundle
+
+  rspec:
+    <<: *default
+
+    steps:
+      - restore_cache:
+          key: v1-repo-{{ .Environment.CIRCLE_SHA1 }}
+      - restore_cache:
+          key: v1-bundle-{{ .Environment.CIRCLE_BRANCH }}
+      - run: bundle --path vendor/bundle
+      - run: cp .circleci/database.yml config/database.yml
+      - run: bundle exec rake ar:migrate:reset
+      - run: bundle exec rake groonga:setup
+      - run: bundle exec rspec
+
+  rubocop:
+    <<: *default
+
+    steps:
+      - restore_cache:
+          key: v1-repo-{{ .Environment.CIRCLE_SHA1 }}
+      - restore_cache:
+          key: v1-bundle-{{ .Environment.CIRCLE_BRANCH }}
+      - run: bundle --path vendor/bundle
+      - run: bundle exec rubocop
+
+  deploy:
+    <<: *default
+
+    steps:
+      - restore_cache:
+          key: v1-repo-{{ .Environment.CIRCLE_SHA1 }}
+      - run: .circleci/heroku_setup.sh
+      - add_ssh_keys:
+          fingerprints:
+            - "73:07:eb:35:06:58:6f:da:9d:7a:9b:f5:64:08:41:d3"
+      - run: .circleci/notify_to_slack.sh "Heroku Deploy" "Deploy start"
+      - run: .circleci/heroku_deploy.sh
+      - run: .circleci/notify_to_slack.sh "Heroku Deploy" "Deploy successful"
+
+workflows:
+  version: 2
+
+  build-and-deploy:
+    jobs:
+      - checkout_code
+      - bundle_dependencies:
+          requires:
+            - checkout_code
+      - rspec:
+          requires:
+            - bundle_dependencies
+      - rubocop:
+          requires:
+            - bundle_dependencies
+      - deploy:
+          requires:
+            - rspec
+            - rubocop
+          filters:
+            branches:
+              only: master
