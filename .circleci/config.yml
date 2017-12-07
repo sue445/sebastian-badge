@@ -9,6 +9,7 @@ default: &default
       environment:
         POSTGRES_USER: ubuntu
         POSTGRES_DB: circle_test
+    - image: memcached:1.5
   working_directory: ~/app
 
 jobs:
@@ -50,6 +51,7 @@ jobs:
       - run: bundle --path vendor/bundle
       - run: cp .circleci/database.yml config/database.yml
       - run: bundle exec rake ar:migrate:reset
+      - run: bundle exec rake groonga:setup
       - run: bundle exec rspec
 
   rubocop:
@@ -72,7 +74,7 @@ jobs:
       - run: .circleci/heroku_setup.sh
       - add_ssh_keys:
           fingerprints:
-            - "a7:63:6a:b6:85:fc:f7:d3:1b:da:5a:bf:bf:dd:e1:97"
+            - "73:07:eb:35:06:58:6f:da:9d:7a:9b:f5:64:08:41:d3"
       - run: .circleci/notify_to_slack.sh "Heroku Deploy" "Deploy start"
       - run: .circleci/heroku_deploy.sh
       - run: .circleci/notify_to_slack.sh "Heroku Deploy" "Deploy successful"
