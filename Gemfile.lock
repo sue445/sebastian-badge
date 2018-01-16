@@ -271,7 +271,7 @@ DEPENDENCIES
   newrelic_rpm
   onkcop
   padrino
-  pg
+  pg (< 1.0.0)
   pry-byebug
   pry-padrino
   puma
