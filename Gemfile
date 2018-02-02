@@ -41,6 +41,8 @@ gem "dalli"
 gem "kaminari-activerecord", ">= 1.0.0"
 gem "kaminari-sinatra", ">= 1.0.0", require: false
 gem "newrelic_rpm"
+gem "puma"
+gem "puma-heroku"
 gem "rollbar"
 gem "rroonga", "6.1.3" # When use v7.0.2, Heroku deploy is failure
 
@@ -67,5 +69,4 @@ end
 
 group :production do
   gem "pg", "< 1.0.0", group: :test # TODO: Remove version lock when activerecord v5.1.5+ is released
-  gem "puma", group: :development
 end
