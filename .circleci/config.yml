@@ -13,6 +13,14 @@ default: &default
     - image: memcached:1.5
   working_directory: ~/app
 
+restore_bundle_cache_option: &restore_bundle_cache_option
+  keys:
+    - v1-bundle-{{ checksum "Gemfile.lock" }}
+    - v1-bundle
+
+restore_repo_cache_option: &restore_repo_cache_option
+  key: v1-repo-{{ .Environment.CIRCLE_SHA1 }}
+
 jobs:
   checkout_code:
     <<: *default
@@ -29,15 +37,13 @@ jobs:
 
     steps:
       - restore_cache:
-          key: v1-repo-{{ .Environment.CIRCLE_SHA1 }}
+          <<: *restore_repo_cache_option
       - restore_cache:
-          keys:
-            - v1-bundle-{{ .Environment.CIRCLE_BRANCH }}
-            - v1-bundle-master
-      - run: bundle install --jobs=4 --retry=3 --path vendor/bundle
-      - run: bundle clean
+          <<: *restore_bundle_cache_option
+      - run: ./.circleci/setup_bundle.sh
+
       - save_cache:
-          key: v1-bundle-{{ .Environment.CIRCLE_BRANCH }}
+          key: v1-bundle-{{ checksum "Gemfile.lock" }}
           paths:
             - ~/app/vendor/bundle
 
@@ -46,10 +52,11 @@ jobs:
 
     steps:
       - restore_cache:
-          key: v1-repo-{{ .Environment.CIRCLE_SHA1 }}
+          <<: *restore_repo_cache_option
       - restore_cache:
-          key: v1-bundle-{{ .Environment.CIRCLE_BRANCH }}
-      - run: bundle --path vendor/bundle
+          <<: *restore_bundle_cache_option
+
+      - run: ./.circleci/setup_bundle.sh
       - run: cp .circleci/database.yml config/database.yml
       - run:
           name: Wait for DB
@@ -63,25 +70,26 @@ jobs:
 
     steps:
       - restore_cache:
-          key: v1-repo-{{ .Environment.CIRCLE_SHA1 }}
+          <<: *restore_repo_cache_option
       - restore_cache:
-          key: v1-bundle-{{ .Environment.CIRCLE_BRANCH }}
-      - run: bundle --path vendor/bundle
+          <<: *restore_bundle_cache_option
+
+      - run: ./.circleci/setup_bundle.sh
       - run: bundle exec rubocop
 
   deploy:
-    <<: *default
+    docker:
+      - image: sue445/heroku-cli
+    working_directory: /home/circleci/app
 
     steps:
       - restore_cache:
-          key: v1-repo-{{ .Environment.CIRCLE_SHA1 }}
+          <<: *restore_repo_cache_option
       - run: .circleci/heroku_setup.sh
       - add_ssh_keys:
           fingerprints:
             - "73:07:eb:35:06:58:6f:da:9d:7a:9b:f5:64:08:41:d3"
-      - run: .circleci/notify_to_slack.sh "Heroku Deploy" "Deploy start"
       - run: .circleci/heroku_deploy.sh
-      - run: .circleci/notify_to_slack.sh "Heroku Deploy" "Deploy successful"
 
 workflows:
   version: 2
