@@ -11,7 +11,7 @@ module Concerns
         # get plugins in update-center.json
         # @return [Hash]
         def fetch_update_center_plugins
-          jsonp = open(UPDATE_CENTER_URL, ssl_verify_mode: OpenSSL::SSL::VERIFY_NONE).read
+          jsonp = open(UPDATE_CENTER_URL, ssl_verify_mode: OpenSSL::SSL::VERIFY_NONE).read # rubocop:disable Security/Open
           json = jsonp.gsub(/updateCenter.post\((.+)\);/m) { Regexp.last_match[1] }
           JSON.parse(json)["plugins"]
         end
@@ -42,7 +42,7 @@ module Concerns
         private
 
           def update_plugins(plugins, newest_released_at)
-            updated_plugins = plugins.select { |plugin| plugin.released_at > newest_released_at }
+            updated_plugins = plugins.select {|plugin| plugin.released_at > newest_released_at }
 
             Plugin.transaction do
               updated_plugins.each do |updated_plugin|
