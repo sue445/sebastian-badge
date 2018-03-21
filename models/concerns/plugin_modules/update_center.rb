@@ -42,7 +42,7 @@ module Concerns
         private
 
           def update_plugins(plugins, newest_released_at)
-            updated_plugins = plugins.select { |plugin| plugin.released_at > newest_released_at }
+            updated_plugins = plugins.select {|plugin| plugin.released_at > newest_released_at }
 
             Plugin.transaction do
               updated_plugins.each do |updated_plugin|
