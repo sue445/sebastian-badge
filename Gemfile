@@ -16,7 +16,7 @@ ruby "2.5.1"
 gem "rake"
 
 # Component requirements
-gem "activerecord", require: "active_record"
+gem "activerecord", ">= 5.1.5", require: "active_record"
 gem "sass"
 gem "slim"
 
@@ -68,5 +68,5 @@ group :test do
 end
 
 group :production do
-  gem "pg", "< 1.0.0", group: :test # TODO: Remove version lock when activerecord v5.1.5+ is released
+  gem "pg", ">= 1.0.0", group: :test
 end
