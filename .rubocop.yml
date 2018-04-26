@@ -16,3 +16,6 @@ Lint/ScriptPermission:
 
 Metrics/BlockLength:
   Max: 36
+
+RSpec/SharedExamples:
+  Enabled: false
