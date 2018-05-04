@@ -10,16 +10,16 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150130135446) do
+ActiveRecord::Schema.define(version: 2015_01_30_135446) do
 
   create_table "plugins", force: :cascade do |t|
-    t.string   "name"
-    t.string   "title"
-    t.string   "version"
-    t.string   "wiki_url"
+    t.string "name"
+    t.string "title"
+    t.string "version"
+    t.string "wiki_url"
     t.datetime "released_at", null: false
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
     t.index ["name"], name: "index_plugins_on_name", unique: true
     t.index ["released_at"], name: "index_plugins_on_released_at"
   end
