@@ -87,7 +87,7 @@ GEM
     docile (1.1.5)
     dotenv (2.4.0)
     erubi (1.7.1)
-    factory_bot (4.8.2)
+    factory_bot (4.10.0)
       activesupport (>= 3.0.0)
     faker-precure (0.0.5)
       rubicure (>= 1.0.5)
