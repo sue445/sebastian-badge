@@ -82,7 +82,7 @@ GEM
       safe_yaml (~> 1.0.0)
     crass (1.0.4)
     dalli (2.7.8)
-    database_rewinder (0.8.3)
+    database_rewinder (0.9.0)
     diff-lcs (1.3)
     docile (1.3.1)
     dotenv (2.5.0)
