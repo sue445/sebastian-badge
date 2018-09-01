@@ -13,50 +13,28 @@ default: &default
     - image: memcached:1.5
   working_directory: ~/app
 
+save_bundle_cache_option: &save_bundle_cache_option
+  key: v1-bundle-{{ checksum "Gemfile.lock" }}
+  paths:
+    - ~/app/vendor/bundle
+
 restore_bundle_cache_option: &restore_bundle_cache_option
   keys:
     - v1-bundle-{{ checksum "Gemfile.lock" }}
     - v1-bundle
 
-restore_repo_cache_option: &restore_repo_cache_option
-  key: v1-repo-{{ .Environment.CIRCLE_SHA1 }}
-
 jobs:
-  checkout_code:
-    <<: *default
-
-    steps:
-      - checkout
-      - save_cache:
-          key: v1-repo-{{ .Environment.CIRCLE_SHA1 }}
-          paths:
-            - ~/app
-
-  bundle_dependencies:
-    <<: *default
-
-    steps:
-      - restore_cache:
-          <<: *restore_repo_cache_option
-      - restore_cache:
-          <<: *restore_bundle_cache_option
-      - run: ./.circleci/setup_bundle.sh
-
-      - save_cache:
-          key: v1-bundle-{{ checksum "Gemfile.lock" }}
-          paths:
-            - ~/app/vendor/bundle
-
   rspec:
     <<: *default
 
     steps:
-      - restore_cache:
-          <<: *restore_repo_cache_option
+      - checkout
       - restore_cache:
           <<: *restore_bundle_cache_option
-
       - run: ./.circleci/setup_bundle.sh
+      - save_cache:
+          <<: *save_bundle_cache_option
+
       - run: cp .circleci/database.yml config/database.yml
       - run:
           name: Wait for DB
@@ -69,12 +47,13 @@ jobs:
     <<: *default
 
     steps:
-      - restore_cache:
-          <<: *restore_repo_cache_option
+      - checkout
       - restore_cache:
           <<: *restore_bundle_cache_option
-
       - run: ./.circleci/setup_bundle.sh
+      - save_cache:
+          <<: *save_bundle_cache_option
+
       - run: bundle exec rubocop
 
   deploy:
@@ -83,8 +62,7 @@ jobs:
     working_directory: /home/circleci/app
 
     steps:
-      - restore_cache:
-          <<: *restore_repo_cache_option
+      - checkout
       - run: .circleci/heroku_setup.sh
       - add_ssh_keys:
           fingerprints:
@@ -96,16 +74,8 @@ workflows:
 
   build-and-deploy:
     jobs:
-      - checkout_code
-      - bundle_dependencies:
-          requires:
-            - checkout_code
-      - rspec:
-          requires:
-            - bundle_dependencies
-      - rubocop:
-          requires:
-            - bundle_dependencies
+      - rspec
+      - rubocop
       - deploy:
           requires:
             - rspec
