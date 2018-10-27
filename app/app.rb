@@ -97,7 +97,7 @@ module Sebastian
       config.enabled      = ENV["ROLLBAR_ACCESS_TOKEN"].present? && Padrino.env == :production
 
       config.exception_level_filters.merge!(
-        "Sinatra::NotFound"            => "ignore",
+        "Sinatra::NotFound" => "ignore",
         "ActiveRecord::RecordNotFound" => "ignore",
       )
     end

@@ -8,7 +8,7 @@ namespace :groonga do
 
     Groonga::Schema.define do |schema|
       schema.create_table("Plugins",
-                          type: :hash,
+                          type:     :hash,
                           key_type: :uint32) do |table|
         table.short_text("name")
         table.short_text("title")
@@ -30,9 +30,9 @@ namespace :groonga do
 
     Groonga::Schema.define do |schema|
       schema.create_table("Terms",
-                          type: :patricia_trie,
-                          key_type: :short_text,
-                          normalizer: "NormalizerAuto",
+                          type:              :patricia_trie,
+                          key_type:          :short_text,
+                          normalizer:        "NormalizerAuto",
                           default_tokenizer: "TokenBigram") do |table|
         table.index("Plugins.name")
         table.index("Plugins.title")
@@ -40,7 +40,7 @@ namespace :groonga do
       end
 
       schema.create_table("Times",
-                          type: :patricia_trie,
+                          type:     :patricia_trie,
                           key_type: :time) do |table|
         table.index("Plugins.released_at")
       end
