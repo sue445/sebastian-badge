@@ -7,5 +7,5 @@ heroku buildpacks:add https://codon-buildpacks.s3.amazonaws.com/buildpacks/groon
 
 git push git@heroku.com:$HEROKU_APP_NAME.git $CIRCLE_SHA1:refs/heads/master
 
-heroku run bundle exec rake ar:migrate --app $HEROKU_APP_NAME
-heroku run bundle exec rake sebastian:clear_all_cache --app $HEROKU_APP_NAME
+heroku run rake ar:migrate --app $HEROKU_APP_NAME
+heroku run rake sebastian:clear_all_cache --app $HEROKU_APP_NAME
