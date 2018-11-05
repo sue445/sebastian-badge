@@ -6,8 +6,10 @@ task :annotate => :environment do
     model_dir:         "#{__dir__}/../../models/",
     exclude_fixtures:  true,
     exclude_factories: true,
+    exclude_helpers:   true,
     exclude_tests:     true,
     show_indexes:      true,
     format_markdown:   false,
+    is_rake:           true,
   )
 end
