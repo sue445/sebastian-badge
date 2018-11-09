@@ -1,5 +1,9 @@
 version: 2.1
 
+orbs:
+  ruby-orbs: sue445/ruby-orbs@volatile
+  heroku:    circleci/heroku@0.0.2
+
 default: &default
   docker:
     - image: circleci/ruby:2.5.3
@@ -13,27 +17,13 @@ default: &default
     - image: memcached:1.5
   working_directory: ~/app
 
-save_bundle_cache_option: &save_bundle_cache_option
-  key: v1-bundle-{{ checksum "Gemfile.lock" }}
-  paths:
-    - ~/app/vendor/bundle
-
-restore_bundle_cache_option: &restore_bundle_cache_option
-  keys:
-    - v1-bundle-{{ checksum "Gemfile.lock" }}
-    - v1-bundle
-
 jobs:
   rspec:
     <<: *default
 
     steps:
       - checkout
-      - restore_cache:
-          <<: *restore_bundle_cache_option
-      - run: ./.circleci/setup_bundle.sh
-      - save_cache:
-          <<: *save_bundle_cache_option
+      - ruby-orbs/bundle-install
 
       - run: cp .circleci/database.yml config/database.yml
       - run:
@@ -48,11 +38,7 @@ jobs:
 
     steps:
       - checkout
-      - restore_cache:
-          <<: *restore_bundle_cache_option
-      - run: ./.circleci/setup_bundle.sh
-      - save_cache:
-          <<: *save_bundle_cache_option
+      - ruby-orbs/bundle-install
 
       - run: bundle exec rubocop
 
