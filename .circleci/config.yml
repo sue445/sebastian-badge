@@ -45,19 +45,6 @@ jobs:
 
       - run: bundle exec rubocop
 
-  deploy:
-    docker:
-      - image: sue445/heroku-cli
-    working_directory: /home/circleci/app
-
-    steps:
-      - checkout
-      - run: .circleci/heroku_setup.sh
-      - add_ssh_keys:
-          fingerprints:
-            - "73:07:eb:35:06:58:6f:da:9d:7a:9b:f5:64:08:41:d3"
-      - run: .circleci/heroku_deploy.sh
-
 workflows:
   version: 2
 
@@ -65,7 +52,15 @@ workflows:
     jobs:
       - rspec
       - rubocop
-      - deploy:
+      - heroku/deploy-via-git:
+          pre-deploy:
+            - run: heroku config:add BUNDLE_WITHOUT="test:development" --app $HEROKU_APP_NAME
+            - run: heroku buildpacks:add https://codon-buildpacks.s3.amazonaws.com/buildpacks/groonga/groonga.tgz --app $HEROKU_APP_NAME || true
+            - run: heroku buildpacks:add heroku/ruby --app $HEROKU_APP_NAME || true
+            - run: heroku buildpacks:add https://codon-buildpacks.s3.amazonaws.com/buildpacks/groonga/rroonga.tgz --app $HEROKU_APP_NAME || true
+          post-deploy:
+            - run: heroku run rake ar:migrate --app $HEROKU_APP_NAME
+            - run: heroku run rake sebastian:clear_all_cache --app $HEROKU_APP_NAME
           context: Heroku
           requires:
             - rspec
