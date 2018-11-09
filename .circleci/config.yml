@@ -1,39 +1,31 @@
-version: 2.0
+version: 2.1
 
-default: &default
-  docker:
-    - image: circleci/ruby:2.5.3
-      environment:
-        RACK_ENV: test
-    - image: circleci/postgres:9.5-alpine
-      environment:
-        POSTGRES_USER: ubuntu
-        POSTGRES_DB: circle_test
-        POSTGRES_PASSWORD: ""
-    - image: memcached:1.5
-  working_directory: ~/app
+orbs:
+  ruby-orbs: sue445/ruby-orbs@volatile
+  heroku:    circleci/heroku@0.0.2
 
-save_bundle_cache_option: &save_bundle_cache_option
-  key: v1-bundle-{{ checksum "Gemfile.lock" }}
-  paths:
-    - ~/app/vendor/bundle
-
-restore_bundle_cache_option: &restore_bundle_cache_option
-  keys:
-    - v1-bundle-{{ checksum "Gemfile.lock" }}
-    - v1-bundle
+executors:
+  default:
+    docker:
+      - image: circleci/ruby:2.5.3
+        environment:
+          RACK_ENV: test
+      - image: circleci/postgres:9.5-alpine
+        environment:
+          POSTGRES_USER: ubuntu
+          POSTGRES_DB: circle_test
+          POSTGRES_PASSWORD: ""
+      - image: memcached:1.5
+    working_directory: ~/app
 
 jobs:
   rspec:
-    <<: *default
+    executor:
+      name: default
 
     steps:
       - checkout
-      - restore_cache:
-          <<: *restore_bundle_cache_option
-      - run: ./.circleci/setup_bundle.sh
-      - save_cache:
-          <<: *save_bundle_cache_option
+      - ruby-orbs/bundle-install
 
       - run: cp .circleci/database.yml config/database.yml
       - run:
@@ -44,30 +36,14 @@ jobs:
       - run: bundle exec rspec
 
   rubocop:
-    <<: *default
+    executor:
+      name: default
 
     steps:
       - checkout
-      - restore_cache:
-          <<: *restore_bundle_cache_option
-      - run: ./.circleci/setup_bundle.sh
-      - save_cache:
-          <<: *save_bundle_cache_option
+      - ruby-orbs/bundle-install
 
       - run: bundle exec rubocop
-
-  deploy:
-    docker:
-      - image: sue445/heroku-cli
-    working_directory: /home/circleci/app
-
-    steps:
-      - checkout
-      - run: .circleci/heroku_setup.sh
-      - add_ssh_keys:
-          fingerprints:
-            - "73:07:eb:35:06:58:6f:da:9d:7a:9b:f5:64:08:41:d3"
-      - run: .circleci/heroku_deploy.sh
 
 workflows:
   version: 2
@@ -76,7 +52,15 @@ workflows:
     jobs:
       - rspec
       - rubocop
-      - deploy:
+      - heroku/deploy-via-git:
+          pre-deploy:
+            - run: heroku config:add BUNDLE_WITHOUT="test:development" --app $HEROKU_APP_NAME
+            - run: heroku buildpacks:add https://codon-buildpacks.s3.amazonaws.com/buildpacks/groonga/groonga.tgz --app $HEROKU_APP_NAME || true
+            - run: heroku buildpacks:add heroku/ruby --app $HEROKU_APP_NAME || true
+            - run: heroku buildpacks:add https://codon-buildpacks.s3.amazonaws.com/buildpacks/groonga/rroonga.tgz --app $HEROKU_APP_NAME || true
+          post-deploy:
+            - run: heroku run rake ar:migrate --app $HEROKU_APP_NAME
+            - run: heroku run rake sebastian:clear_all_cache --app $HEROKU_APP_NAME
           context: Heroku
           requires:
             - rspec
