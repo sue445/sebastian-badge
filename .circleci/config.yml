@@ -57,9 +57,6 @@ workflows:
             - run: heroku buildpacks:add https://codon-buildpacks.s3.amazonaws.com/buildpacks/groonga/groonga.tgz --app $HEROKU_APP_NAME || true
             - run: heroku buildpacks:add heroku/ruby --app $HEROKU_APP_NAME || true
             - run: heroku buildpacks:add https://codon-buildpacks.s3.amazonaws.com/buildpacks/groonga/rroonga.tgz --app $HEROKU_APP_NAME || true
-          post-deploy:
-            - run: heroku run rake ar:migrate --app $HEROKU_APP_NAME
-            - run: heroku run rake sebastian:clear_all_cache --app $HEROKU_APP_NAME
           context: Heroku
           requires:
             - rspec
