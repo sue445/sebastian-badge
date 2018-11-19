@@ -7,12 +7,6 @@
   "scripts": {
     "postdeploy": "bundle exec rake ar:create ar:migrate && bundle exec rake sebastian:update_center"
   },
-  "env": {
-    "BUNDLE_WITHOUT": {
-      "description": "bundle install --without <these>",
-      "value": "test:development"
-    }
-  },
   "buildpacks": [
     {
       "url": "https://codon-buildpacks.s3.amazonaws.com/buildpacks/groonga/groonga.tgz"
