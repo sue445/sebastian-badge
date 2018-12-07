@@ -61,6 +61,7 @@ workflows:
           requires:
             - rspec
             - rubocop
-          filters:
-            branches:
-              only: master
+          # TODO: debug
+          # filters:
+          #   branches:
+          #     only: master
