@@ -5,4 +5,4 @@ heroku buildpacks:add https://codon-buildpacks.s3.amazonaws.com/buildpacks/groon
 heroku buildpacks:add heroku/ruby --app $HEROKU_APP_NAME || true
 heroku buildpacks:add https://codon-buildpacks.s3.amazonaws.com/buildpacks/groonga/rroonga.tgz --app $HEROKU_APP_NAME || true
 
-git push git@heroku.com:$HEROKU_APP_NAME.git $CIRCLE_SHA1:refs/heads/master
+git push git@heroku.com:$HEROKU_APP_NAME.git $CIRCLE_SHA1:master
