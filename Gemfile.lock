@@ -246,7 +246,7 @@ GEM
     tins (1.20.2)
     tzinfo (1.2.5)
       thread_safe (~> 0.1)
-    unicode-display_width (1.4.0)
+    unicode-display_width (1.4.1)
     webmock (3.4.2)
       addressable (>= 2.3.6)
       crack (>= 0.3.2)
