@@ -25,7 +25,8 @@ jobs:
 
     steps:
       - checkout
-      - ruby-orbs/bundle-install
+      - ruby-orbs/bundle-install:
+          cache_key_prefix: "v2-bundle"
 
       - run: cp .circleci/database.yml config/database.yml
       - run:
@@ -41,7 +42,8 @@ jobs:
 
     steps:
       - checkout
-      - ruby-orbs/bundle-install
+      - ruby-orbs/bundle-install:
+          cache_key_prefix: "v2-bundle"
 
       - run: bundle exec rubocop
 
