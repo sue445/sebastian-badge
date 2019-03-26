@@ -62,7 +62,7 @@ GEM
       groonga-command (>= 1.2.8)
       groonga-command-parser (>= 1.1.0)
       hashie
-    groonga-command (1.4.0)
+    groonga-command (1.4.1)
       json
     groonga-command-parser (1.1.3)
       groonga-command (>= 1.4.0)
