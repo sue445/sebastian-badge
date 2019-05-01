@@ -99,7 +99,7 @@ GEM
     moneta (1.0.0)
     multi_json (1.13.1)
     mustermann (1.0.3)
-    newrelic_rpm (6.2.0.354)
+    newrelic_rpm (6.3.0.355)
     nokogiri (1.10.3)
       mini_portile2 (~> 2.4.0)
     onkcop (0.53.0.3)
