@@ -1,3 +1,12 @@
+GIT
+  remote: https://github.com/sue445/onkcop.git
+  revision: 6256494c1f860f62df6a4d57c81a4c200beee53b
+  branch: rubocop_0.68.0
+  specs:
+    onkcop (0.53.0.3)
+      rubocop (>= 0.53.0)
+      rubocop-rspec (>= 1.24.0)
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -102,9 +111,6 @@ GEM
     newrelic_rpm (6.3.0.355)
     nokogiri (1.10.3)
       mini_portile2 (~> 2.4.0)
-    onkcop (0.53.0.3)
-      rubocop (>= 0.53.0)
-      rubocop-rspec (>= 1.24.0)
     padrino (0.14.4)
       padrino-admin (= 0.14.4)
       padrino-cache (= 0.14.4)
@@ -215,7 +221,7 @@ GEM
       unicode-display_width (>= 1.4.0, < 1.6)
     rubocop-performance (1.1.0)
       rubocop (>= 0.67.0)
-    rubocop-rspec (1.32.0)
+    rubocop-rspec (1.33.0)
       rubocop (>= 0.60.0)
     ruby-progressbar (1.10.0)
     safe_yaml (1.0.5)
@@ -272,7 +278,7 @@ DEPENDENCIES
   kaminari-activerecord (>= 1.0.0)
   kaminari-sinatra (>= 1.0.0)
   newrelic_rpm
-  onkcop
+  onkcop!
   padrino (>= 0.14.4)
   pg (>= 1.0.0)
   pry-byebug
@@ -292,6 +298,9 @@ DEPENDENCIES
   slim
   sqlite3
   webmock
+
+RUBY VERSION
+   ruby 2.6.3p62
 
 BUNDLED WITH
    1.17.2
