@@ -62,7 +62,7 @@ GEM
       activesupport (>= 4.2.0)
     faker-precure (0.0.5)
       rubicure (>= 1.0.5)
-    ffi (1.11.0)
+    ffi (1.11.1)
     foreman (0.85.0)
       thor (~> 0.19.1)
     gqtp (1.0.7)
