@@ -66,12 +66,12 @@ GEM
     foreman (0.85.0)
       thor (~> 0.19.1)
     gqtp (1.0.7)
-    groonga-client (0.6.1)
+    groonga-client (0.6.2)
       gqtp (>= 1.0.4)
-      groonga-command (>= 1.2.8)
+      groonga-command (>= 1.4.5)
       groonga-command-parser (>= 1.1.0)
       hashie
-    groonga-command (1.4.2)
+    groonga-command (1.4.5)
       json
     groonga-command-parser (1.1.4)
       groonga-command (>= 1.4.0)
