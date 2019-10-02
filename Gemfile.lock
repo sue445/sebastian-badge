@@ -107,7 +107,7 @@ GEM
     minitest (5.12.2)
     moneta (1.0.0)
     mustermann (1.0.3)
-    newrelic_rpm (6.6.0.358)
+    newrelic_rpm (6.7.0.359)
     nio4r (2.5.2)
     nokogiri (1.10.4)
       mini_portile2 (~> 2.4.0)
