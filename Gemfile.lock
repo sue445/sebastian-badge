@@ -205,7 +205,7 @@ GEM
     rspec-power_assert (1.1.0)
       power_assert (~> 1.1.0)
       rspec (>= 2.14)
-    rspec-support (3.8.2)
+    rspec-support (3.8.3)
     rubicure (1.2.5)
       activesupport (>= 5.0.0)
       hashie (>= 2.0.5)
