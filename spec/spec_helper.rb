@@ -7,7 +7,7 @@ RACK_ENV = "test".freeze unless defined?(RACK_ENV)
 require File.expand_path(File.dirname(__FILE__) + "/../config/boot")
 Dir[File.expand_path(File.dirname(__FILE__) + "/../app/helpers/**/*.rb")].each(&method(:require))
 
-Dir["#{File.dirname(__FILE__)}/support/**/*.rb"].each {|f| require f }
+Dir["#{File.dirname(__FILE__)}/support/**/*.rb"].sort.each {|f| require f }
 
 require "rspec/its"
 require "webmock/rspec"
