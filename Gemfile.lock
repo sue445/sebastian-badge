@@ -99,7 +99,7 @@ GEM
     faker-precure (0.0.5)
       rubicure (>= 1.0.5)
     ffi (1.11.3)
-    foreman (0.86.0)
+    foreman (0.87.0)
     gqtp (1.0.7)
     groonga-client (0.6.2)
       gqtp (>= 1.0.4)
