@@ -106,7 +106,7 @@ GEM
       groonga-command (>= 1.4.5)
       groonga-command-parser (>= 1.1.0)
       hashie
-    groonga-command (1.4.5)
+    groonga-command (1.4.7)
       json
     groonga-command-parser (1.1.4)
       groonga-command (>= 1.4.0)
