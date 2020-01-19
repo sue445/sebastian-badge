@@ -211,7 +211,7 @@ GEM
       power_assert (~> 1.1.0)
       rspec (>= 2.14)
     rspec-support (3.9.2)
-    rubicure (1.2.5)
+    rubicure (1.2.6)
       activesupport (>= 5.0.0)
       hashie (>= 2.0.5)
       sengiri_yaml (>= 0.0.2)
