@@ -98,7 +98,7 @@ GEM
       activesupport (>= 4.2.0)
     faker-precure (0.0.5)
       rubicure (>= 1.0.5)
-    ffi (1.12.1)
+    ffi (1.12.2)
     foreman (0.87.0)
     gqtp (1.0.7)
     groonga-client (0.6.2)
