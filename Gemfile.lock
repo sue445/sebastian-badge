@@ -151,7 +151,7 @@ GEM
     parser (2.7.0.2)
       ast (~> 2.4.0)
     pg (1.2.2)
-    pkg-config (1.4.0)
+    pkg-config (1.4.1)
     power_assert (1.1.5)
     pry (0.12.2)
       coderay (~> 1.1.0)
