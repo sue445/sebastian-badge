@@ -115,7 +115,7 @@ GEM
     hashie (4.1.0)
     i18n (0.9.5)
       concurrent-ruby (~> 1.0)
-    io-like (0.3.0)
+    io-like (0.3.1)
     jaro_winkler (1.5.4)
     json (2.3.0)
     json-stream (0.2.1)
