@@ -224,7 +224,7 @@ GEM
       unicode-display_width (>= 1.4.0, < 1.7)
     rubocop-performance (1.5.2)
       rubocop (>= 0.71.0)
-    rubocop-rspec (1.37.1)
+    rubocop-rspec (1.38.0)
       rubocop (>= 0.68.1)
     rubocop_auto_corrector (0.3.0)
       rubocop (>= 0.72.0)
