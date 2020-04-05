@@ -161,7 +161,7 @@ GEM
       pry (~> 0.13.0)
     pry-padrino (0.1.2)
       pry (>= 0.8)
-    public_suffix (4.0.3)
+    public_suffix (4.0.4)
     puma (4.3.3)
       nio4r (~> 2.0)
     puma-heroku (1.1.0)
