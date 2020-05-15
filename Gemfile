@@ -2,7 +2,7 @@ source "https://rubygems.org"
 
 git_source(:github) {|repo| "https://github.com/#{repo}.git" }
 
-ruby "2.6.6"
+ruby "2.7.1"
 
 # Distribute your app as a gem
 # gemspec
@@ -46,7 +46,6 @@ gem "newrelic_rpm"
 gem "puma"
 gem "puma-heroku"
 gem "rollbar"
-gem "rroonga", "6.1.3" # When use v7.0.2, Heroku deploy is failure
 
 group :development do
   gem "annotate"

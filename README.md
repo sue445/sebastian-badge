@@ -26,7 +26,6 @@ bundle exec foreman start
 ```bash
 RACK_ENV=test bundle exec rake ar:create
 RACK_ENV=test bundle exec rake ar:migrate
-RACK_ENV=test bundle exec rake groonga:setup
 bundle exec rspec
 ```
 
@@ -42,7 +41,6 @@ heroku addons:add scheduler
 heroku addons:add pgbackups:auto-month
 heroku config:add ROLLBAR_ACCESS_TOKEN=XXXXXXXXXXXXXXXX
 heroku config:add NEW_RELIC_LICENSE_KEY=XXXXXXXXXXXXXXXX
-heroku config:set BUILDPACK_URL=https://github.com/groonga/heroku-buildpack-rroonga
 ```
 
 ### Scheduler

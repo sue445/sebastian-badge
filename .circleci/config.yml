@@ -7,7 +7,7 @@ orbs:
 executors:
   default:
     docker:
-      - image: circleci/ruby:2.6.6
+      - image: circleci/ruby:2.7.1
         environment:
           RACK_ENV: test
       - image: circleci/postgres:9.5-alpine-ram
@@ -33,7 +33,6 @@ jobs:
           name: Wait for DB
           command: dockerize -wait tcp://localhost:5432 -timeout 1m
       - run: bundle exec rake ar:migrate:reset
-      - run: bundle exec rake groonga:setup
       - run: bundle exec rspec
 
   rubocop:

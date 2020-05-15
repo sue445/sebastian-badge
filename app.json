@@ -4,17 +4,6 @@
   "website": "http://sebastian-badge.info/",
   "repository": "https://github.com/sue445/sebastian-badge",
   "keywords": ["ruby", "padrino", "Jenkins"],
-  "buildpacks": [
-    {
-      "url": "https://codon-buildpacks.s3.amazonaws.com/buildpacks/groonga/groonga.tgz"
-    },
-    {
-      "url": "heroku/ruby"
-    },
-    {
-      "url": "https://codon-buildpacks.s3.amazonaws.com/buildpacks/groonga/rroonga.tgz"
-    }
-  ],
   "addons": [
     "heroku-postgresql:hobby-dev",
     "newrelic:wayne",
