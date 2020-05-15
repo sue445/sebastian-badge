@@ -25,7 +25,6 @@ class Plugin < ActiveRecord::Base
   after_save     :clear_cache
   before_destroy :clear_cache
 
-  include Concerns::PluginModules::Groonga
   include Concerns::PluginModules::UpdateCenter
 
   def sha1

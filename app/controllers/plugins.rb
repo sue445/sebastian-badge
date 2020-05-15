@@ -51,14 +51,7 @@ Sebastian::App.controllers :plugins do
 
   helpers do
     def search(query)
-      groonga_plugins = Groonga["Plugins"]
-      matched_groonga_plugins = groonga_plugins.select do |record|
-        record.match(query) do |match_target|
-          match_target.title | match_target.name
-        end
-      end
-      plugin_ids = matched_groonga_plugins.map(&:_key)
-      Plugin.where(id: plugin_ids)
+      Plugin.where("title LIKE ? OR name LIKE ?", "%#{query}%", "%#{query}%")
     end
   end
 end
