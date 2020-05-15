@@ -46,7 +46,7 @@ gem "newrelic_rpm"
 gem "puma"
 gem "puma-heroku"
 gem "rollbar"
-gem "rroonga"
+gem "rroonga", "6.1.3" # When use v7.0.2, Heroku deploy is failure
 
 group :development do
   gem "annotate"
