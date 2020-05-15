@@ -7,8 +7,6 @@ http://sebastian-badge.info/
 [![Coverage Status](https://coveralls.io/repos/sue445/sebastian-badge/badge.svg)](https://coveralls.io/r/sue445/sebastian-badge)
 [![Code Climate](https://codeclimate.com/github/sue445/sebastian-badge/badges/gpa.svg)](https://codeclimate.com/github/sue445/sebastian-badge)
 
-[![Stories in Ready](https://badge.waffle.io/sue445/sebastian-badge.svg?label=ready&title=Ready)](http://waffle.io/sue445/sebastian-badge)
-
 ## Setup
 ```bash
 cp config/.env{.example,}
