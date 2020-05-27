@@ -66,10 +66,10 @@ GEM
     i18n (1.8.2)
       concurrent-ruby (~> 1.0)
     json (2.3.0)
-    kaminari-activerecord (1.2.0)
+    kaminari-activerecord (1.2.1)
       activerecord
-      kaminari-core (= 1.2.0)
-    kaminari-core (1.2.0)
+      kaminari-core (= 1.2.1)
+    kaminari-core (1.2.1)
     kaminari-sinatra (1.0.1)
       actionview
       kaminari-core (~> 1.0)
