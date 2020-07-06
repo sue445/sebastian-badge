@@ -92,7 +92,7 @@ GEM
       ruby2_keywords (~> 0.0.1)
     newrelic_rpm (6.11.0.365)
     nio4r (2.5.2)
-    nokogiri (1.10.9)
+    nokogiri (1.10.10)
       mini_portile2 (~> 2.4.0)
     padrino (0.15.0)
       padrino-admin (= 0.15.0)
