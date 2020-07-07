@@ -61,8 +61,8 @@ group :development do
 
   gem "pry-byebug", group: :test
   gem "pry-padrino", group: :test
-  gem "rubocop-performance", require: false
   gem "rubocop_auto_corrector", require: false
+  gem "rubocop-performance", require: false
   gem "sqlite3", group: :test
 end
 
