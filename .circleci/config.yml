@@ -3,6 +3,7 @@ version: 2.1
 orbs:
   ruby-orbs: sue445/ruby-orbs@volatile
   heroku:    circleci/heroku@1.1.1
+  slack:     circleci/slack@volatile
 
 executors:
   default:
@@ -34,6 +35,7 @@ jobs:
           command: dockerize -wait tcp://localhost:5432 -timeout 1m
       - run: bundle exec rake ar:migrate:reset
       - run: bundle exec rspec
+      - slack/status
 
   rubocop:
     executor:
@@ -45,6 +47,7 @@ jobs:
           cache_key_prefix: "v2-bundle"
 
       - run: bundle exec rubocop
+      - slack/status
 
   deploy:
     docker:
@@ -58,6 +61,7 @@ jobs:
           fingerprints:
             - "73:07:eb:35:06:58:6f:da:9d:7a:9b:f5:64:08:41:d3"
       - run: .circleci/heroku_deploy.sh
+      - slack/status
 
 workflows:
   version: 2
