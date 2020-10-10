@@ -35,7 +35,9 @@ jobs:
           command: dockerize -wait tcp://localhost:5432 -timeout 1m
       - run: bundle exec rake ar:migrate:reset
       - run: bundle exec rspec
-      - slack/status
+      - slack/notify:
+          event: fail
+          template: basic_fail_1
 
   rubocop:
     executor:
@@ -47,7 +49,9 @@ jobs:
           cache_key_prefix: "v2-bundle"
 
       - run: bundle exec rubocop
-      - slack/status
+      - slack/notify:
+          event: fail
+          template: basic_fail_1
 
   deploy:
     docker:
@@ -61,7 +65,9 @@ jobs:
           fingerprints:
             - "73:07:eb:35:06:58:6f:da:9d:7a:9b:f5:64:08:41:d3"
       - run: .circleci/heroku_deploy.sh
-      - slack/status
+      - slack/notify:
+          event: fail
+          template: basic_fail_1
 
 workflows:
   version: 2
