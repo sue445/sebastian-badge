@@ -138,7 +138,7 @@ GEM
     pry-padrino (0.1.2)
       pry (>= 0.8)
     public_suffix (4.0.6)
-    puma (4.3.6)
+    puma (5.0.2)
       nio4r (~> 2.0)
     rack (2.2.3)
     rack-protection (2.1.0)
