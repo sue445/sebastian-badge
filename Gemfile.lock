@@ -140,8 +140,6 @@ GEM
     public_suffix (4.0.6)
     puma (4.3.6)
       nio4r (~> 2.0)
-    puma-heroku (1.1.0)
-      puma (>= 3.0, < 5.0)
     rack (2.2.3)
     rack-protection (2.1.0)
       rack
@@ -270,7 +268,6 @@ DEPENDENCIES
   pry-byebug
   pry-padrino
   puma
-  puma-heroku
   rack-test
   rake
   rollbar

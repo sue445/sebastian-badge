@@ -44,7 +44,6 @@ gem "kaminari-activerecord", ">= 1.0.0"
 gem "kaminari-sinatra", ">= 1.0.0", require: false
 gem "newrelic_rpm"
 gem "puma"
-gem "puma-heroku"
 gem "rollbar"
 
 group :development do
