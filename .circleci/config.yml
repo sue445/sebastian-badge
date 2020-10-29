@@ -65,7 +65,6 @@ jobs:
           fingerprints:
             - "73:07:eb:35:06:58:6f:da:9d:7a:9b:f5:64:08:41:d3"
       - run: .circleci/heroku_deploy.sh
-      - run: apk --update --no-cache add jq curl
       - slack/notify:
           event: fail
           template: basic_fail_1
