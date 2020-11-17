@@ -35,7 +35,7 @@ jobs:
           command: dockerize -wait tcp://localhost:5432 -timeout 1m
       - run: bundle exec rake ar:migrate:reset
       - run: bundle exec rspec
-      - slack/status
+      - slack/notify-on-failure
 
   rubocop:
     executor:
@@ -47,7 +47,7 @@ jobs:
           cache_key_prefix: "v2-bundle"
 
       - run: bundle exec rubocop
-      - slack/status
+      - slack/notify-on-failure
 
   deploy:
     docker:
