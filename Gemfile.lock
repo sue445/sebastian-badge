@@ -64,7 +64,7 @@ GEM
     hashie (4.1.0)
     i18n (1.8.5)
       concurrent-ruby (~> 1.0)
-    json (2.4.0)
+    json (2.4.1)
     kaminari-activerecord (1.2.1)
       activerecord
       kaminari-core (= 1.2.1)
