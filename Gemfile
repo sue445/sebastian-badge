@@ -43,6 +43,7 @@ gem "dalli"
 gem "kaminari-activerecord", ">= 1.0.0"
 gem "kaminari-sinatra", ">= 1.0.0", require: false
 gem "newrelic_rpm"
+gem "nokogiri", ">= 1.11.0.rc4"
 gem "puma"
 gem "rollbar"
 
