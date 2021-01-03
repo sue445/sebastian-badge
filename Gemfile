@@ -56,6 +56,7 @@ group :development do
   gem "pry-padrino", group: :test
   gem "rubocop_auto_corrector", require: false
   gem "rubocop-performance", require: false
+  gem "rubocop-rake", require: false
   gem "rubocop-rspec", ">= 2.0.0.pre", require: false
   gem "sqlite3", group: :test
 end
