@@ -18,7 +18,7 @@ ruby "2.7.2"
 gem "rake"
 
 # Component requirements
-gem "activerecord", ">= 5.2.0", require: "active_record"
+gem "activerecord", "< 6.1.0", require: "active_record"
 gem "sass"
 gem "slim"
 
