@@ -50,7 +50,7 @@ GEM
       activesupport (>= 5.0.0)
     faker-precure (0.0.5)
       rubicure (>= 1.0.5)
-    ffi (1.14.2)
+    ffi (1.15.0)
     foreman (0.87.2)
     hashdiff (1.0.1)
     hashie (4.1.0)
