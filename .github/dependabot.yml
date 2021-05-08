@@ -9,9 +9,3 @@ updates:
   assignees:
   - sue445
   versioning-strategy: lockfile-only
-  ignore:
-  - dependency-name: activerecord
-    versions:
-    - 6.1.1
-    - 6.1.2
-    - 6.1.2.1
