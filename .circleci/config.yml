@@ -2,7 +2,7 @@ version: 2.1
 
 orbs:
   ruby-orbs: sue445/ruby-orbs@volatile
-  heroku:    circleci/heroku@1.1.1
+  heroku:    circleci/heroku@1.2.2
   slack:     circleci/slack@3
 
 executors:
@@ -49,20 +49,6 @@ jobs:
       - run: bundle exec rubocop
       - slack/notify-on-failure
 
-  deploy:
-    docker:
-      - image: sue445/heroku-cli
-    working_directory: /home/circleci/app
-
-    steps:
-      - checkout
-      - run: .circleci/heroku_setup.sh
-      - add_ssh_keys:
-          fingerprints:
-            - "73:07:eb:35:06:58:6f:da:9d:7a:9b:f5:64:08:41:d3"
-      - run: .circleci/heroku_deploy.sh
-      - slack/status
-
 workflows:
   version: 2
 
@@ -70,7 +56,7 @@ workflows:
     jobs:
       - rspec
       - rubocop
-      - deploy:
+      - heroku/deploy-via-git:
           context: Heroku
           requires:
             - rspec
@@ -78,3 +64,5 @@ workflows:
           filters:
             branches:
               only: master
+          post-deploy:
+            - slack/status
