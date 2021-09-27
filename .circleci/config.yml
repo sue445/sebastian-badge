@@ -63,6 +63,6 @@ workflows:
             - rubocop
           filters:
             branches:
-              only: master
+              only: heroku_orb
           post-deploy:
             - slack/status
