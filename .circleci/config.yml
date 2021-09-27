@@ -64,8 +64,8 @@ workflows:
           filters:
             branches:
               only: heroku_orb
-          pre-deploy:
-            - run: git fetch --depth=10000
-            - run: git fetch --all --unshallow
+          # pre-deploy:
+          #   - run: git fetch --depth=10000
+          #   - run: git fetch --all --unshallow
           post-deploy:
             - slack/status
