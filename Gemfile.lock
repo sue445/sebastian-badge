@@ -12,7 +12,7 @@ GEM
     activerecord (6.0.4.1)
       activemodel (= 6.0.4.1)
       activesupport (= 6.0.4.1)
-    activerecord-simple_index_name (1.0.0)
+    activerecord-simple_index_name (1.0.1)
       activerecord (>= 5.0.0)
       activesupport (>= 5.0.0)
     activesupport (6.0.4.1)
