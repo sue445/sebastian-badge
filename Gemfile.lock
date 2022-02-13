@@ -1,21 +1,21 @@
 GEM
   remote: https://rubygems.org/
   specs:
-    actionview (6.0.4.4)
-      activesupport (= 6.0.4.4)
+    actionview (6.0.4.6)
+      activesupport (= 6.0.4.6)
       builder (~> 3.1)
       erubi (~> 1.4)
       rails-dom-testing (~> 2.0)
       rails-html-sanitizer (~> 1.1, >= 1.2.0)
-    activemodel (6.0.4.4)
-      activesupport (= 6.0.4.4)
-    activerecord (6.0.4.4)
-      activemodel (= 6.0.4.4)
-      activesupport (= 6.0.4.4)
+    activemodel (6.0.4.6)
+      activesupport (= 6.0.4.6)
+    activerecord (6.0.4.6)
+      activemodel (= 6.0.4.6)
+      activesupport (= 6.0.4.6)
     activerecord-simple_index_name (1.0.1)
       activerecord (>= 5.0.0)
       activesupport (>= 5.0.0)
-    activesupport (6.0.4.4)
+    activesupport (6.0.4.6)
       concurrent-ruby (~> 1.0, >= 1.0.2)
       i18n (>= 0.7, < 2)
       minitest (~> 5.1)
@@ -66,7 +66,7 @@ GEM
       kaminari-core (~> 1.0)
       padrino-helpers
       sinatra
-    loofah (2.13.0)
+    loofah (2.14.0)
       crass (~> 1.0.2)
       nokogiri (>= 1.5.9)
     mail (2.7.1)
