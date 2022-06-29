@@ -23,7 +23,20 @@ gem "sass"
 gem "slim"
 
 # Test requirements
-gem "rack-test", require: "rack/test", group: "test"
+
+# FIXME: rspec-padrino doesn't work with rack-test v2.0.0+
+# https://app.circleci.com/pipelines/github/sue445/sebastian-badge/1606/workflows/0bf61ca4-d65a-45dd-8af1-719330f675c9/jobs/5314
+#   1) /plugins GET /plugins/:name
+#      Failure/Error: last_application.assigns(name)
+#
+#      NoMethodError:
+#        undefined method `last_application' for nil:NilClass
+#      # ./vendor/bundle/ruby/2.7.0/gems/rspec-padrino-0.3.0/lib/rspec/padrino/methods.rb:5:in `last_application'
+#      # ./spec/support/test_utils.rb:19:in `assigns'
+#      # ./spec/app/controllers/plugins_controller_spec.rb:9:in `block (3 levels) in <top (required)>'
+#      # ./vendor/bundle/ruby/2.7.0/gems/webmock-3.14.0/lib/webmock/rspec.rb:37:in `block (2 levels) in <top (required)>'
+gem "rack-test", "< 2.0.0", require: "rack/test", group: "test"
+
 gem "rspec", group: "test"
 
 # Padrino Stable Gem
